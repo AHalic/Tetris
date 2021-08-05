@@ -1,0 +1,34 @@
+-> classes formatos: (são 7 formatos)
+    dimensoes
+    eixo onde sera girado (centro)
+    metodo:
+        impressão
+        rotação (direita) - seta para cima
+
+-> classe da peça
+    cor
+    formato (extend outra classe)
+    posição no canva
+
+-> classe pontuação
+
+-> classe janela
+    • Sobescrever a tela inteira ou existe outra forma
+
+-> classe jogo
+    tics
+    janela
+    placar
+    verificar linhas
+    matriz representando o canva
+
+[20x40]
+
+[
+        |
+11111   |
+    1   |
+   111  |
+    2222|
+11111111|
+]
