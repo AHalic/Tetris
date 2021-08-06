@@ -5,7 +5,7 @@ class Game {
         document.body.style.background = "lightcyan";
         
         this.board = document.getElementById("tetrisboard");
-        this.boardContext = board.getContext ("2d");
+        this.boardContext = this.board.getContext ("2d");
 
         this.matrix = new Array(10)
 
