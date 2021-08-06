@@ -4,10 +4,14 @@
     metodo:
         impressão
         rotação (direita) - seta para cima
+        descer peça
 
 -> classe da peça
-    cor
-    formato (extend outra classe)
+    formato
+    vetor blocos
+
+-> classe do bloco
+    cor 
     posição no canva
 
 -> classe pontuação
@@ -21,6 +25,12 @@
     placar
     verificar linhas
     matriz representando o canva
+
+------------------------------------------
+Dimensões
+blocos = 30x30
+janela = 300x540 (matriz 10x18) 
+
 
 [20x40]
 
