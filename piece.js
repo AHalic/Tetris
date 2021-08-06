@@ -1,7 +1,7 @@
-class Piece {
-    constructor() {
+// class Piece {
+//     constructor() {
         
 
-    }
+//     }
 
-}
+// }

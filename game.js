@@ -29,4 +29,4 @@ class Game {
 let game = new Game();
 game.clearBoard()
 let block = new Block("yellow", 150, 200);
-block.drawBlock();
+block.drawBlock(game.boardContext);
