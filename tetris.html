@@ -6,14 +6,21 @@
 </head>
 
 <body>
-    <div id="score"> 0 </div>
-    <canvas id="nextpiece"> </canvas>
-    <canvas id="tetrisboard" width ="300 " height ="540"> </canvas>
+    <div style="width: 100%; overflow: hidden;">
+        <div style="width: 400px; float: left;"> 
+            <canvas id="tetrisboard" width ="300 " height ="540"> </canvas>
+        </div>
+        <div style="margin-left: 620px;"> 
+            <div id="score"> 0 </div>
+            <canvas id="nextpiece" width ="100 " height ="200"> </canvas>
+        </div>
+   </div>
+
     <style>
         #tetrisboard{
             position: absolute;
             top: 50%;
-            left: 50%;
+            left: 30%;
             transform: translate(-50% ,-50%);
         }
         #score{

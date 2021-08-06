@@ -9,10 +9,13 @@
 -> classe da peça
     formato
     vetor blocos
+    
 
 -> classe do bloco
     cor 
     posição no canva
+    metodo:
+        descer = y+30
 
 -> classe pontuação
 
