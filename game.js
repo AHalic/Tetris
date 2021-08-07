@@ -4,10 +4,13 @@ import { Piece } from "./piece.js";
 
 class Game {
     constructor(){
-        document.body.style.background = "lightcyan";
+        document.body.style.background = "#101417FF";
         
         this.board = document.getElementById("tetrisboard");
         this.boardContext = this.board.getContext ("2d");
+
+        this.nextBoard = document.getElementById("nextpiece");
+        this.nextBoardContext = this.nextBoard.getContext ("2d");
 
         this.matrix = new Array(10)
 
@@ -20,21 +23,35 @@ class Game {
     }
 
     clearBoard(){
-        this.boardContext.fillStyle = "white";
-        this.boardContext.strokeStyle = "black";
+        this.boardContext.fillStyle = "#212126FA";
+        this.boardContext.strokeStyle = "DimGray";
+        this.boardContext.lineWidth = 10;
         this.boardContext.fillRect(0, 0, this.board.width, this.board.height);
         this.boardContext.strokeRect(0, 0, this.board.width, this.board.height);
-        // this.boardContext.strokeLine(150, 0, 150, this.board.height)
+        this.boardContext.strokeStyle = "black";
+        this.boardContext.lineWidth = 2;
+
         this.boardContext.beginPath();
         this.boardContext.moveTo(150, 0);
         this.boardContext.lineTo(150, this.board.height);
         this.boardContext.stroke();
+    }
+
+    clearNextBoard() {
+        this.nextBoardContext.fillStyle = "#212126FA";
+        this.nextBoardContext.lineWidth = 10;
+        this.nextBoardContext.strokeStyle = "DimGray";
+        this.nextBoardContext.fillRect(0, 0, this.nextBoard.width, this.nextBoard.height);
+        this.nextBoardContext.strokeRect(0, 0, this.nextBoard.width, this.nextBoard.height);
+        this.nextBoardContext.strokeStyle = "black";
+        this.nextBoardContext.lineWidth = 2;
     }
 }
 
 
 let game = new Game();
 game.clearBoard()
+game.clearNextBoard()
 
 let piece = new Piece(6);
 piece.drawPiece(game.boardContext);
