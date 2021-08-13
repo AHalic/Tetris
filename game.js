@@ -6,12 +6,16 @@ class Game {
     constructor(){
         document.body.style.background = "#101417FF";
         
+        // Canvas onde aparece o jogo
         this.board = document.getElementById("tetrisboard");
         this.boardContext = this.board.getContext ("2d");
 
+        // Canva onde aparece a próxima peça que entrará no jogo
         this.nextBoard = document.getElementById("nextpiece");
         this.nextBoardContext = this.nextBoard.getContext ("2d");
 
+
+        // Matriz referente as posições do tetris
         this.matrix = new Array(10)
 
         this.matrix.forEach(
@@ -23,7 +27,7 @@ class Game {
     }
 
     clearBoard(){
-        this.boardContext.fillStyle = "#212126FA";
+        this.boardContext.fillStyle = "#1a1c21";
         this.boardContext.strokeStyle = "DimGray";
         this.boardContext.lineWidth = 10;
         this.boardContext.fillRect(0, 0, this.board.width, this.board.height);
@@ -38,7 +42,7 @@ class Game {
     }
 
     clearNextBoard() {
-        this.nextBoardContext.fillStyle = "#212126FA";
+        this.nextBoardContext.fillStyle = "#1a1c21";
         this.nextBoardContext.lineWidth = 10;
         this.nextBoardContext.strokeStyle = "DimGray";
         this.nextBoardContext.fillRect(0, 0, this.nextBoard.width, this.nextBoard.height);
@@ -48,34 +52,42 @@ class Game {
     }
 }
 
-
 let game = new Game();
 game.clearBoard()
 game.clearNextBoard()
 
-let piece = new Piece(6);
+let type = Math.round(Math.random() * (7 - 1) +1);
+
+let nextpiece = new Piece(5, 60);
+let piece = new Piece(2);
 piece.drawPiece(game.boardContext);
+nextpiece.drawPiece(game.nextBoardContext);
 
-// let format1 = new Format1();
-// format1.drawPiece(game.boardContext);
+let i = 0;
+function loop(){
+    setTimeout( function onTick() {
+        let flag = piece.downPiece(game.boardContext);
+        game.clearBoard();
+        // console.log("%c Estou printando ", 'background: #222; color: #bada55')
+        //draw.board() usando a matriz
+        piece.drawPiece(game.boardContext);
+        //piece.rotate();
+        if (i++ == 5) exit();
+        if(flag)
+            // console.log("E lá vamos nós"); 
+            loop();
+ 
+    } , 1000);
+}
 
-// let format2 = new Format2();
-// format2.drawPiece(game.boardContext);
+loop()
 
-// let format3 = new Format3();
-// format3.drawPiece(game.boardContext);
+function runGame(){
+    //checa se acabou o jogo
 
-// let format4 = new Format4();
-// format4.drawPiece(game.boardContext);
+    // chega se completou linha
 
-// let format5 = new Format5();
-// format5.drawPiece(game.boardContext);
+    // cria peça
 
-// let format6 = new Format6();
-// format6.drawPiece(game.boardContext);
-
-// let format7 = new Format7();
-// format7.drawPiece(game.boardContext);
-
-// let block = new Block("yellow", 150, 200);
-// block.drawBlock(game.boardContext);
+    //chama o loop de descer a peça
+}
