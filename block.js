@@ -1,8 +1,11 @@
 class Block {
     constructor(color, x, y) {
         this.color = color;
+        // posições no canva
         this.x = x;
         this.y = y;
+
+        // posições na matriz
         this.i = x/30;
         this.j = y/30;
     }
@@ -18,6 +21,7 @@ class Block {
         this.y += 30;
         this.j += 1;
     }
+
 }
 
 export default Block;
