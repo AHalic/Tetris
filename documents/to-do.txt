@@ -35,7 +35,7 @@ blocos = 30x30
 janela = 300x540 (matriz 10x18) 
 
 
-[20x40]
+[10x18]
 
 [
         |
