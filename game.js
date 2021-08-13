@@ -72,7 +72,7 @@ function loop(){
         //draw.board() usando a matriz
         piece.drawPiece(game.boardContext);
         //piece.rotate();
-        if (i++ == 5) exit();
+        // if (i++ == 5) exit();
         if(flag)
             // console.log("E lá vamos nós"); 
             loop();
