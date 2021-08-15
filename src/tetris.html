@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset ="utf-8"/>
+    <title> Tetris Game </title>
+    <!-- Include the style for tetris in another file    -->
+    <link rel="stylesheet" href="tetris-style.css">
+
+</head>
+
+<body>
+    <div class="grid-container">
+
+        <div id="canvas-1">
+            <canvas id="tetrisboard" width ="300 " height ="540"> </canvas>
+        </div>
+        <!-- This gone be ugly, the svg file -->
+        <svg id="title" width="794" height="1000" viewBox="0 0 794 1000" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g id="Frame 1">
+                <g id="LetterT2">
+                    <rect id="Rec" x="295" y="751" width="48" height="48" fill="#0FBA65" stroke="#141313" stroke-width="2"/>
+                    <rect id="Rec_2" x="345" y="751" width="48" height="48" fill="#0FBA65" stroke="#141313" stroke-width="2"/>
+                    <rect id="Rec_3" x="395" y="751" width="48" height="48" fill="#0FBA65" stroke="#141313" stroke-width="2"/>
+                    <rect id="Rec_4" x="345" y="801" width="48" height="48" fill="#0FBA65" stroke="#141313" stroke-width="2"/>
+                    <rect id="Rec_5" x="345" y="851" width="48" height="48" fill="#0FBA65" stroke="#141313" stroke-width="2"/>
+                    <rect id="Rec_6" x="345" y="951" width="48" height="48" fill="#0FBA65" stroke="#141313" stroke-width="2"/>
+                    <rect id="Rec_7" x="345" y="901" width="48" height="48" fill="#0FBA65" stroke="#141313" stroke-width="2"/>
+                </g>
+                <g id="LetterT1">
+                    <rect id="Rec_8" x="1" y="751" width="48" height="48" fill="#0FBA65" stroke="#141313" stroke-width="2"/>
+                    <path id="Rec_9" d="M95 751H143V799H95V751Z" fill="#0FBA65" stroke="#141313" stroke-width="2"/>
+                    <rect id="Rec_10" x="48" y="751" width="48" height="48" fill="#0FBA65" stroke="#141313" stroke-width="2"/>
+                    <path id="Rec_11" d="M48 801H96V849H48V801Z" fill="#0FBA65" stroke="#141313" stroke-width="2"/>
+                    <rect id="Rec_12" x="48" y="851" width="48" height="48" fill="#0FBA65" stroke="#141313" stroke-width="2"/>
+                    <rect id="Rec_13" x="48" y="951" width="48" height="48" fill="#0FBA65" stroke="#141313" stroke-width="2"/>
+                    <rect id="Rec_14" x="48" y="901" width="48" height="48" fill="#0FBA65" stroke="#141313" stroke-width="2"/>
+                </g>
+                <g id="LetterR">
+                    <rect id="Rec_15" x="445" y="801" width="48" height="48" fill="#620FBA" stroke="#141313" stroke-width="2"/>
+                    <rect id="Rec_16" x="445" y="751" width="48" height="48" fill="#620FBA" stroke="#141313" stroke-width="2"/>
+                    <rect id="Rec_17" x="495" y="751" width="48" height="48" fill="#620FBA" stroke="#141313" stroke-width="2"/>
+                    <rect id="Rec_18" x="445" y="951" width="48" height="48" fill="#620FBA" stroke="#141313" stroke-width="2"/>
+                    <rect id="Rec_19" x="445" y="851" width="48" height="48" fill="#620FBA" stroke="#141313" stroke-width="2"/>
+                    <rect id="Rec_20" x="445" y="901" width="48" height="48" fill="#620FBA" stroke="#141313" stroke-width="2"/>
+                    <rect id="Rec_21" x="495" y="901" width="48" height="48" fill="#620FBA" stroke="#141313" stroke-width="2"/>
+                    <rect id="Rec_22" x="545" y="751" width="48" height="48" fill="#620FBA" stroke="#141313" stroke-width="2"/>
+                    <rect id="Rec_23" x="545" y="801" width="48" height="48" fill="#620FBA" stroke="#141313" stroke-width="2"/>
+                    <rect id="Rec_24" x="545" y="951" width="48" height="48" fill="#620FBA" stroke="#141313" stroke-width="2"/>
+                    <rect id="Rec_25" x="495" y="851" width="48" height="48" fill="#620FBA" stroke="#141313" stroke-width="2"/>
+                    <rect id="Rec_26" x="545" y="851" width="48" height="48" fill="#620FBA" stroke="#141313" stroke-width="2"/>
+                </g>
+                <g id="LetterI">
+                    <path id="Rec_27" d="M595 751H643V799H595V751Z" fill="#CD1E41" stroke="#141313" stroke-width="2"/>
+                    <path id="Rec_28" d="M595 801H643V849H595V801Z" fill="#CD1E41" stroke="#141313" stroke-width="2"/>
+                    <rect id="Rec_29" x="595" y="851" width="48" height="48" fill="#CD1E41" stroke="#141313" stroke-width="2"/>
+                    <rect id="Rec_30" x="595" y="901" width="48" height="48" fill="#CD1E41" stroke="#141313" stroke-width="2"/>
+                    <rect id="Rec_31" x="595" y="951" width="48" height="48" fill="#CD1E41" stroke="#141313" stroke-width="2"/>
+                </g>
+                <g id="LetterS">
+                    <rect id="Rec_32" x="645" y="751" width="48" height="48" fill="#E67505" stroke="#141313" stroke-width="2"/>
+                    <rect id="Rec_33" x="645" y="801" width="48" height="48" fill="#E67505" stroke="#141313" stroke-width="2"/>
+                    <rect id="Rec_34" x="645" y="851" width="48" height="48" fill="#E67505" stroke="#141313" stroke-width="2"/>
+                    <rect id="Rec_35" x="695" y="851" width="48" height="48" fill="#E67505" stroke="#141313" stroke-width="2"/>
+                    <rect id="Rec_36" x="745" y="851" width="48" height="48" fill="#E67505" stroke="#141313" stroke-width="2"/>
+                    <rect id="Rec_37" x="695" y="751" width="48" height="48" fill="#E67505" stroke="#141313" stroke-width="2"/>
+                    <rect id="Rec_38" x="745" y="751" width="48" height="48" fill="#E67505" stroke="#141313" stroke-width="2"/>
+                    <rect id="Rec_39" x="645" y="951" width="48" height="48" fill="#E67505" stroke="#141313" stroke-width="2"/>
+                    <rect id="Rec_40" x="695" y="951" width="48" height="48" fill="#E67505" stroke="#141313" stroke-width="2"/>
+                    <rect id="Rec_41" x="745" y="951" width="48" height="48" fill="#E67505" stroke="#141313" stroke-width="2"/>
+                    <rect id="Rec_42" x="745" y="901" width="48" height="48" fill="#E67505" stroke="#141313" stroke-width="2"/>
+                </g>
+                <g id="LetterE">
+                    <rect id="Rec_43" x="145" y="801" width="48" height="48" fill="#0F76BA" stroke="#141313" stroke-width="2"/>
+                    <rect id="Rec_44" x="195" y="751" width="48" height="48" fill="#0F76BA" stroke="#141313" stroke-width="2"/>
+                    <rect id="Rec_45" x="145" y="851" width="48" height="48" fill="#0F76BA" stroke="#141313" stroke-width="2"/>
+                    <rect id="Rec_46" x="195" y="851" width="48" height="48" fill="#0F76BA" stroke="#141313" stroke-width="2"/>
+                    <rect id="Rec_47" x="145" y="901" width="48" height="48" fill="#0F76BA" stroke="#141313" stroke-width="2"/>
+                    <rect id="Rec_48" x="145" y="951" width="48" height="48" fill="#0F76BA" stroke="#141313" stroke-width="2"/>
+                    <rect id="Rec_49" x="195" y="951" width="48" height="48" fill="#0F76BA" stroke="#141313" stroke-width="2"/>
+                    <rect id="Rec_50" x="245" y="751" width="48" height="48" fill="#0F76BA" stroke="#141313" stroke-width="2"/>
+                    <rect id="Rec_51" x="245" y="851" width="48" height="48" fill="#0F76BA" stroke="#141313" stroke-width="2"/>
+                    <rect id="Rec_52" x="245" y="951" width="48" height="48" fill="#0F76BA" stroke="#141313" stroke-width="2"/>
+                    <rect id="Rec_53" x="145" y="751" width="48" height="48" fill="#0F76BA" stroke="#141313" stroke-width="2"/>
+                </g>
+            </g>
+        </svg>
+        <!-- Sorry for this       -->
+        <div id="score"> 0 </div>
+        <div id="canvas-2">
+            <canvas id="nextpiece" width ="240" height ="180"> </canvas>
+        </div>
+      
+    </div>
+
+
+</body>
+<script type="module" src ="game.js"> </script>
+</html>
