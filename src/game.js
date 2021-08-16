@@ -1,11 +1,11 @@
 // import Block from './block.js';
 // import { Format1, Format2, Format3, Format4, Format5, Format6, Format7} from './format.js';
-import { Piece } from "./piece.js";
+// import { Piece } from "./piece.js";
 
-class Game {
+export class Game {
     constructor(){
         document.body.style.background = "#101417FF";
-        
+
         // Canvas onde aparece o jogo
         this.board = document.getElementById("tetrisboard");
         this.boardContext = this.board.getContext ("2d");
@@ -15,16 +15,18 @@ class Game {
         this.nextBoardContext = this.nextBoard.getContext ("2d");
 
 
-        // Matriz referente as posições do tetris
-        this.matrix = new Array(10)
 
-        this.matrix.forEach(
-            i => {
-                for(j = 0; j < 18; j++)
-                    this.matriz[i].append(0)
-            }
-        )
+
+        // Matriz referente as posições do tetris
+        // Matriz de comprimento 18x10
+        this.matrix = Array(18);
+
+        for(let i=0; i<this.matrix.length; i++){
+            this.matrix[i] = Array(10).fill(0);
+        }
+        
     }
+
 
     clearBoard(){
         this.boardContext.fillStyle = "#1a1c21";
@@ -35,13 +37,13 @@ class Game {
         this.boardContext.strokeStyle = "black";
         this.boardContext.lineWidth = 2;
 
-        this.boardContext.beginPath();
-        this.boardContext.moveTo(150, 0);
-        this.boardContext.lineTo(150, this.board.height);
-        this.boardContext.stroke();
+        // this.boardContext.beginPath();
+        // this.boardContext.moveTo(150, 0);
+        // this.boardContext.lineTo(150, this.board.height);
+        // this.boardContext.stroke();
     }
 
-    clearNextBoard() {
+    clearNextBoard(){
         this.nextBoardContext.fillStyle = "#1a1c21";
         this.nextBoardContext.lineWidth = 10;
         this.nextBoardContext.strokeStyle = "DimGray";
@@ -50,44 +52,62 @@ class Game {
         this.nextBoardContext.strokeStyle = "black";
         this.nextBoardContext.lineWidth = 2;
     }
+
+    drawMatrix(){
+
+        this.clearBoard();
+
+        let x, y, color;
+
+        for(let i=0; i<this.matrix.length; i++){
+            for(let j=0; j<10; j++){
+                if(this.matrix[i][j] == 0)
+                    continue;
+                    
+                switch(this.matrix[i][j]){
+                    case(1):
+                        color = 'purple';
+                        break;
+                    case(2):
+                        color = 'green';
+                        break;
+                    case(3):
+                        color = 'orange';
+                        break;
+                    case(4):
+                        color = 'blue';
+                        break;
+                    case(5):
+                        color = 'yellow';
+                        break;
+                    case(6):
+                        color = 'brown';
+                        break;
+                    case(7):
+                        color = 'magenta';
+                        break;
+                }
+
+                x = j*30;
+                y = i*30;
+
+                this.boardContext.fillStyle = color;
+                this.boardContext.strokestyle = 'black';
+                this.boardContext.fillRect(x , y , 30, 30);
+                this.boardContext.strokeRect(x , y , 30, 30);
+            }
+        }
+    }
+
+    over(){
+        for(let elem of this.matrix[0]){
+            if(elem != 0) {
+                return true;
+            }
+        }
+
+        return false;
+    }
 }
 
-let game = new Game();
-game.clearBoard()
-game.clearNextBoard()
-
-let type = Math.round(Math.random() * (7 - 1) +1);
-
-let nextpiece = new Piece(5, 60);
-let piece = new Piece(2);
-piece.drawPiece(game.boardContext);
-nextpiece.drawPiece(game.nextBoardContext);
-
-let i = 0;
-function loop(){
-    setTimeout( function onTick() {
-        let flag = piece.downPiece(game.boardContext);
-        game.clearBoard();
-        // console.log("%c Estou printando ", 'background: #222; color: #bada55')
-        //draw.board() usando a matriz
-        piece.drawPiece(game.boardContext);
-        //piece.rotate();
-        // if (i++ == 5) exit();
-        if(flag)
-            // console.log("E lá vamos nós"); 
-            loop();
- 
-    } , 1000);
-}
-
-loop()
-
-function runGame(){
-    //checa se acabou o jogo
-
-    // chega se completou linha
-
-    // cria peça
-
-    //chama o loop de descer a peça
-}
+// export default Game;
