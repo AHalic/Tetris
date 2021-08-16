@@ -4,10 +4,7 @@ class Block {
         // posições no canva
         this.x = x;
         this.y = y;
-
-        // posições na matriz
-        this.i = x/30;
-        this.j = y/30;
+        /* Para achar a posição na matriz basta dividir por 30 */
     }
 
     drawBlock(boardContext) {
@@ -19,7 +16,14 @@ class Block {
 
     down(){
         this.y += 30;
-        this.j += 1;
+    }
+
+    left() {
+        this.x -= 30;
+    }
+    
+    right() {
+        this.x += 30;
     }
 
 }
