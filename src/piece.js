@@ -33,33 +33,46 @@ export class Piece {
         }
     }
 
+    getType(){
+        return this.type;
+    }
+
 // Funções de rotação -----------------------------------------------------------------------
 
-    rotate(){        
-        let newPosition = this.format.rotate(this.rotation);
+    RotateIsValid(newFormat, matrix){
+        // Check if it colides with border
         
-        if(Piece.RotateIsValid(newPosition)){
+        // console.log("Antes " + typeof(newFormat) + " novo formato array: " + newFormat);
+        for(let k=0; k < newFormat.length; k++){
+            let new_x = newFormat[k][0];
+            let new_y = newFormat[k][1];
+            if (new_x < 0 || new_y < 0 || new_x > 9*30 || new_y > 17*30) return false;
+        }
+
+        let i, j;
+        // Check if it colides with another piece
+        for(let k=0; k < newFormat.length; k++){
+            i = newFormat[k][1]/30;
+            j = newFormat[k][0]/30;
+            if(matrix[i][j] != 0) return false;
+        }
+
+        return true;
+    }
+
+    rotate(matrix){        
+        let newPosition = this.format.rotate(this.rotation);
+        console.log("Bem Antes " + newPosition);
+        if(this.RotateIsValid(newPosition, matrix)){
             console.log("Validou\n");
             this.updatePosition(newPosition);
             this.rotation = (this.rotation+1)%4;
         }
     }
 
-    static RotateIsValid(newFormat){
-        // Check if it colides with border
-        for(let k=0; k < newFormat.length; k++){
-            let i = newFormat[k][0]/30;
-            let j = newFormat[k][1]/30;
-            if (i < 0 || j < 0 || i > 9 || j > 17) return false;
-        }
-        // Check if it colides with others blocks in matrix
-        // 
-        // 
-        return true;
-    }
-
     updatePosition(newPosition){
         for (let i=0; i < newPosition.length; i++){
+            // Atualiza a posição do bloco.
             this.format.piece[i].x = newPosition[i][0];
             this.format.piece[i].y = newPosition[i][1];
         }
@@ -75,22 +88,31 @@ export class Piece {
         )
     }
 
-    downPiece(boardContext){
+    downPiece(matrix){
         let flag = true;
-        //Irá acessar cada bloco da peça.
+        let i, j;
+        //Irá acessar cada bloco da peça, verificando se a movimentação é válida
         this.format.piece.forEach(
             block => {
                 //Para cada bloco, deverá ver, se a posição seguinte à ocupada
                 //pela peça já não esta ocupada na matriz de posições.
-                let index = block.j + 1;
-
-                if(index >= 0 && block.y >= 510){
+                // console.log("This is the index line:", block.y/30)
+                
+                i = block.y/30;
+                j = block.x/30;
+                 
+                if(i+1 > 17){
                     flag = false;
                 }
+                else if(matrix[i+1][j] != 0 || block.y >= 510){
+                    flag = false;
+                }
+
             }
         )
-        //Se for true, significa que a posição seguinte esta vazia, e a peça pode descer.
+        // Se for true, significa que a posição seguinte esta vazia, e a peça pode descer.
         if(flag){
+            // Movimenta a peça
             this.format.piece.forEach(
                 block => {
                     block.down();
@@ -99,8 +121,79 @@ export class Piece {
             return true;
         }
         else{
-            // Tem que preencher a matriz quando parar.
+            // Consolida a peça na matriz e a torna estática
+            this.format.piece.forEach(
+                block => {
+                    i = block.y/30; 
+                    j = block.x/30;
+                    // console.log("i: " + i + " j: " + j);
+                    matrix[i][j] = this.type;
+                }
+            )
             return false;
         }
+    }
+
+    leftPiece(matrix){
+        let flag = true;
+        // Verifica se a movimentação é válida
+        this.format.piece.forEach(
+            block => {
+                //Para cada bloco, deverá ver, se a posição seguinte à ocupada
+                //pela peça já não esta ocupada na matriz de posições.
+                let j = block.x/30;
+                let i = block.y/30;
+
+                if(block.x < 0){
+                    flag = false;
+                }
+                else if(matrix[i][j-1] != 0){
+                    flag = false;
+                }
+            }
+        )
+        //Se for true, significa que a posição seguinte esta vazia, e a peça pode descer.
+        if(flag){
+            // Movimenta a peça para a esquerda
+            this.format.piece.forEach(
+                block => {
+                    block.left();
+                }
+            )
+            return true;
+        }
+        
+    }
+
+    rightPiece(matrix){
+        let flag = true;
+        // Verifica se a movimentação é válida
+        this.format.piece.forEach(
+            block => {
+                //Para cada bloco, deverá ver, se a posição seguinte à ocupada
+                //pela peça já não esta ocupada na matriz de posições.
+                let j = block.x/30;
+                let i = block.y/30;
+
+                if(block.x > 540){
+                    flag = false;
+                }
+                else if(matrix[i][j+1] != 0){
+                    flag = false;
+                }
+            }
+        )
+        // console.log("a flag é" + flag);
+        //Se for true, significa que a posição seguinte esta vazia, e a peça pode descer.
+        if(flag){
+            // Movimenta a peça para a esquerda
+            this.format.piece.forEach(
+                block => {
+                    block.right();
+                }
+            )
+            return true;
+        }
+        
     }
 }
