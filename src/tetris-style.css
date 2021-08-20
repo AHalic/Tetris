@@ -19,7 +19,8 @@
     bottom: 110%;
     margin-left: 80px;
     left: 40%;
-    transform: translate(10% ,100%);
+    margin-bottom: auto;
+    transform: translate(20% ,120%);
 }
 #score{
     position: absolute;
@@ -36,8 +37,8 @@
 /*The black hole*/
 
 svg{
-    width: 400px; 
-    height: 300px;
+    width: 300px; 
+    height: 200px;
 }
 /* 
 #LetterT1,
@@ -53,29 +54,29 @@ svg{
 } */
 
 #LetterT1{
-    animation: down 2s infinite alternate;
-    animation-delay: 0s;
+    animation: down 2.5s infinite alternate;
+    animation-delay: 1s;
 
 }
 #LetterE{
-    animation: down 2s infinite alternate;
-    animation-delay: 1.2s;
+    animation: down 2.5s infinite alternate;
+    animation-delay: 1.5s; /*1.2*/
 }
 #LetterT2{
-    animation: down 2s infinite alternate;
-    animation-delay: 3.4s;
+    animation: down 2.5s infinite alternate;
+    animation-delay: 2s; /*3.4s*/
 }
 #LetterR{
-    animation: down 2s infinite alternate;
-    animation-delay: 4.6s;
+    animation: down 2.5s infinite alternate;
+    animation-delay: 2.5s; /*4.6s*/
 }
 #LetterI{
-    animation: down 2s infinite alternate;
-    animation-delay: 5.8s;
+    animation: down 2.5s infinite alternate;
+    animation-delay: 3s; /*5.8s*/
 }
 #LetterS {
-    animation: down 2s infinite alternate;
-    animation-delay: 8s;
+    animation: down 2.5s infinite alternate;
+    animation-delay: 3.5s; /*6.5s*/
 }
 
 
