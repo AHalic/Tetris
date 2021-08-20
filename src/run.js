@@ -61,6 +61,7 @@ function loop(nextPiece){
             loop(nextPiece);
         }
         else{
+            game.checkLine();
             piece = new Piece(nextPiece.getType());
             
             let type = Math.round(Math.random() * (7 - 1) +1);

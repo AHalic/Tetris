@@ -14,7 +14,8 @@ export class Game {
         this.nextBoard = document.getElementById("nextpiece");
         this.nextBoardContext = this.nextBoard.getContext ("2d");
 
-
+        this.score = 0;
+        document.getElementById("score").innerHTML = this.score;
 
 
         // Matriz referente as posições do tetris
@@ -96,6 +97,46 @@ export class Game {
                 this.boardContext.fillRect(x , y , 30, 30);
                 this.boardContext.strokeRect(x , y , 30, 30);
             }
+        }
+    }
+
+    downMatrix(i){
+        if (i == 0) {
+            for(let j = 0; j < 10; j++){
+                this.matrix[i][j] = 0;
+            }
+        }
+        else {
+            for(let old = i; old > 0; old--){
+                let newLine = old - 1;
+                
+                for(let j = 0; j < 10; j++){
+                    console.log("novo " + newLine + " antes " + old + " e o j " + j);
+                    this.matrix[old][j] = this.matrix[newLine][j];
+                }   
+
+            }
+        }
+    }
+
+    checkLine(){
+        let i = 0;
+
+        for (let line of this.matrix) {
+            let cont = 0;
+            
+            for(let elem of line) {
+                if (elem != 0) {
+                    cont++;
+                }
+            }
+            
+            if (cont == line.length) {
+                document.getElementById("score").innerHTML = ++this.score;
+                this.downMatrix(i);
+            }
+            
+            i++;
         }
     }
 
