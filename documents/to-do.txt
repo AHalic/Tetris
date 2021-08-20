@@ -1,3 +1,13 @@
+Falta fazer
+    -> contar pontuação
+    -> limpar linha cheia
+    -> fazer menu de inicio (press space e começa)
+    -> botão de pausa
+    -> fim do jogo e press space pra recomeçar (??)
+
+
+
+----------------------------------------------------------
 -> classes formatos: (são 7 formatos)
     dimensoes
     eixo onde sera girado (centro)
