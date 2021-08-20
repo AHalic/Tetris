@@ -110,33 +110,46 @@ export class Game {
             for(let old = i; old > 0; old--){
                 let newLine = old - 1;
                 
+                let cont = 0;
                 for(let j = 0; j < 10; j++){
-                    console.log("novo " + newLine + " antes " + old + " e o j " + j);
+                    // console.log("novo " + newLine + " antes " + old + " e o j " + j);
                     this.matrix[old][j] = this.matrix[newLine][j];
+                    if(this.matrix[newLine][j] == 0)
+                        cont++;
                 }   
+                if (cont == 0) {
+                    break;
+                }
 
             }
         }
     }
 
     checkLine(){
-        let i = 0;
+        // let i = 0;
 
-        for (let line of this.matrix) {
+        for (let i = this.matrix.length - 1; i >= 0; i--) {
             let cont = 0;
             
-            for(let elem of line) {
-                if (elem != 0) {
+            for(let j = 0; j < 10; j++) {
+                if (this.matrix[i][j] != 0) {
                     cont++;
                 }
             }
             
-            if (cont == line.length) {
+            console.log(cont);
+            // Se a linha está toda vazia então não precisa verificar mais
+            if (cont == 0) {
+                break;
+            }
+            // Se a linha está toda preenchida entao desce
+            if (cont == 10) {
                 document.getElementById("score").innerHTML = ++this.score;
                 this.downMatrix(i);
+                i++;
             }
             
-            i++;
+            // i++;
         }
     }
 
