@@ -117,9 +117,9 @@ export class Game {
                     if(this.matrix[newLine][j] == 0)
                         cont++;
                 }   
-                // if (cont == 0) {
-                //     break;
-                // }
+                if (cont == this.matrix[newLine].length) {
+                    break;
+                }
 
             }
         }
