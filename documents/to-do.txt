@@ -1,5 +1,6 @@
 Falta fazer
     -> contar pontuação
+    -> bonus de linhas
     -> limpar linha cheia
     -> fazer menu de inicio (press space e começa)
     -> botão de pausa
