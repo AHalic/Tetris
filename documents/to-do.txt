@@ -1,10 +1,11 @@
 Falta fazer
-    -> contar pontuação
+    -> contar pontuação (linhas) ok
     -> bonus de linhas
-    -> limpar linha cheia
+    -> limpar linha cheia  ok
     -> fazer menu de inicio (press space e começa)
     -> botão de pausa
     -> fim do jogo e press space pra recomeçar (??)
+    -> musica
 
 
 
