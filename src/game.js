@@ -15,7 +15,9 @@ export class Game {
         this.nextBoardContext = this.nextBoard.getContext ("2d");
 
         this.score = 0;
+        this.lines = 0;
         document.getElementById("score").innerHTML = this.score;
+        document.getElementById("lines").innerHTML = this.lines;
 
 
         // Matriz referente as posições do tetris
@@ -45,7 +47,7 @@ export class Game {
     }
 
     clearNextBoard(){
-        this.nextBoardContext.fillStyle = "#1a1c21";
+        this.nextBoardContext.fillStyle = "#101417FF";
         this.nextBoardContext.lineWidth = 10;
         this.nextBoardContext.strokeStyle = "DimGray";
         this.nextBoardContext.fillRect(0, 0, this.nextBoard.width, this.nextBoard.height);
@@ -144,7 +146,7 @@ export class Game {
             }
             // Se a linha está toda preenchida entao desce
             if (cont == 10) {
-                document.getElementById("score").innerHTML = ++this.score;
+                document.getElementById("lines").innerHTML = ++this.lines;
                 this.downMatrix(i);
                 i++;
             }
