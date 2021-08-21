@@ -75,7 +75,7 @@ function loop(nextPiece){
     } , 1000);
 }
 
-console.log("Printando matrix:");
+// console.log("Printando matrix:");
 
 function runGame(){
     document.addEventListener("keydown", keyEvents);

@@ -62,9 +62,9 @@ export class Piece {
 
     rotate(matrix){        
         let newPosition = this.format.rotate(this.rotation);
-        console.log("Bem Antes " + newPosition);
+        // console.log("Bem Antes " + newPosition);
         if(this.RotateIsValid(newPosition, matrix)){
-            console.log("Validou\n");
+            // console.log("Validou\n");
             this.updatePosition(newPosition);
             this.rotation = (this.rotation+1)%4;
         }
