@@ -128,7 +128,8 @@ export class Game {
     }
 
     checkLine(){
-        // let i = 0;
+        let score = 0;
+        let qtd = 0;
 
         for (let i = this.matrix.length - 1; i >= 0; i--) {
             let cont = 0;
@@ -139,7 +140,7 @@ export class Game {
                 }
             }
             
-            console.log(cont);
+            // console.log(cont);
             // Se a linha está toda vazia então não precisa verificar mais
             if (cont == 0) {
                 break;
@@ -148,11 +149,16 @@ export class Game {
             if (cont == 10) {
                 document.getElementById("lines").innerHTML = ++this.lines;
                 this.downMatrix(i);
+                qtd++;
+                score += qtd*10;
+                console.log(score);
                 i++;
             }
             
             // i++;
         }
+        this.score += score;
+        document.getElementById("score").innerHTML = this.score;
     }
 
     over(){
