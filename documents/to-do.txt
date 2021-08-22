@@ -1,11 +1,18 @@
 Falta fazer
     -> contar pontuação (linhas) ok
-    -> bonus de linhas
+    -> bonus de linhas ok
     -> limpar linha cheia  ok
+
     -> fazer menu de inicio (press space e começa)
     -> botão de pausa
     -> fim do jogo e press space pra recomeçar (??)
     -> musica
+        - fundo
+        - linha completa
+        - fim do jogo
+    -> peso (se n recebe uma faz tempo dar ela)
+    -> level?  (tempo de clock diminuir por level)
+    -> tecla q vai o max pra baixo q da (hard drop-space)
 
 
 
