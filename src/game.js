@@ -159,9 +159,12 @@ export class Game {
             // Se a linha está toda preenchida entao desce
             if (cont == 10) {
                 document.getElementById("lines").innerHTML = ++this.lines;
-                this.downMatrix(i);
-
                 qtd++;
+                this.downMatrix(i);
+                if (qtd == 1) {
+                    this.lineSound.play();
+                }
+
                 score += qtd*10;
                 // console.log(score);
                 i++;
@@ -173,7 +176,6 @@ export class Game {
             this.score += score;
             document.getElementById("score").innerHTML = this.score;
             // this.audioLine.src = "audios/mixkit-game-ball-tap-2073.mp3";
-            this.lineSound.play();
             // this.audioLine.autoplay = true;
         }
     }
@@ -189,19 +191,5 @@ export class Game {
     }
 }
 
-function sound(src) {
-    this.sound = document.createElement("audio");
-    this.sound.src = src;
-    this.sound.setAttribute("preload", "auto");
-    this.sound.setAttribute("controls", "none");
-    this.sound.style.display = "none";
-    document.body.appendChild(this.sound);
-    this.play = function(){
-        this.sound.play();
-    }
-    this.stop = function(){
-        this.sound.pause();
-    }    
-}
 
 // export default Game;
