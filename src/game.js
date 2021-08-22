@@ -1,6 +1,4 @@
-// import Block from './block.js';
-// import { Format1, Format2, Format3, Format4, Format5, Format6, Format7} from './format.js';
-// import { Piece } from "./piece.js";
+
 
 export class Game {
     constructor(){
@@ -16,13 +14,19 @@ export class Game {
 
         this.score = 0;
         this.lines = 0;
+
         document.getElementById("score").innerHTML = this.score;
         document.getElementById("lines").innerHTML = this.lines;
 
 
-        this.lineSound = new sound("audios/mixkit-player-jumping-in-a-video-game-2043.mp3");
-        this.themeMusic = new sound("https://www.youtube.com/watch?v=NmCCQxVBfyM");
-        this.themeMusic.play();
+        this.lineSound = new Audio("audios/mixkit-player-jumping-in-a-video-game-2043.mp3");
+        this.themeMusic = new Audio("audios/themeSong.mp3");
+        this.lineSound.load();
+        this.themeMusic.load();
+        this.themeMusic.loop = true;
+        this.lineSound.volume = 0.4;
+        this.themeMusic.volume = 0.3;
+
         // this.audioLine = document.createElement("audio");
         // this.audioLine = new Audio("audios/mixkit-player-jumping-in-a-video-game-2043.wav");
         // this.audioLine.load();
