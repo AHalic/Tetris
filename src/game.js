@@ -22,16 +22,6 @@ export class Game {
         this.audioLine = new Audio("audios/mixkit-player-jumping-in-a-video-game-2043.wav");
         this.audioLine.load();
 
-
-        // console.log(this.audioLine.canPlayType("audio/wav"))
-        // this.audioLine.play();
-
-        // document.getElementById("lineAudio");
-        // this.audioLine.autoplay = true;
-    
-        // this.audioLine = 
-
-
         // Matriz referente as posições do tetris
         // Matriz de comprimento 18x10
         this.matrix = Array(18);
