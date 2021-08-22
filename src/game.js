@@ -24,8 +24,8 @@ export class Game {
         this.lineSound.load();
         this.themeMusic.load();
         this.themeMusic.loop = true;
-        this.lineSound.volume = 0.4;
-        this.themeMusic.volume = 0.3;
+        this.lineSound.volume = 0.2;
+        this.themeMusic.volume = 0.1;
 
         // this.audioLine = document.createElement("audio");
         // this.audioLine = new Audio("audios/mixkit-player-jumping-in-a-video-game-2043.wav");
