@@ -80,6 +80,7 @@ function loop(nextPiece){
                     runGame();
                 }
             });
+            
             alert("Game Over. Press Space to restart.");
             return;
         }
