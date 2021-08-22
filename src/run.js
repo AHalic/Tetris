@@ -12,12 +12,14 @@ function sleep2(milliseconds) {
   
 let pause = true;
 let piece, nextPiece;
-let game = new Game();
+let game; // = new Game();
 
+// Inicia o jogo (só acontece uma vez)
 document.addEventListener("keydown", function start(event) {
     const SPACE_KEY = 32;
     const keyPressed = event.keyCode;
     if (keyPressed == SPACE_KEY) {
+        game = new Game();
         game.themeMusic.play();
         document.removeEventListener("keydown", start);
         runGame();
@@ -66,7 +68,19 @@ function loop(nextPiece){
     // alert("veio");
     setTimeout( function onTick() {
         if (game.over()){
-            alert("Fim");
+            document.addEventListener("keydown", function restart(event) {
+                const SPACE_KEY = 32;
+                const keyPressed = event.keyCode;
+                if (keyPressed == SPACE_KEY) {
+                    game.themeMusic.pause();
+                    buildGame();
+                    // game = new Game();
+                    game.themeMusic.play();
+                    document.removeEventListener("keydown", restart);
+                    runGame();
+                }
+            });
+            alert("Game Over. Press Space to restart.");
             return;
         }
 
@@ -96,6 +110,7 @@ function loop(nextPiece){
 // console.log("Printando matrix:");
 
 function buildGame() {
+    game = new Game();
     game.clearBoard()
     game.clearNextBoard()
     
