@@ -72,7 +72,7 @@ function loop(nextPiece){
             loop(nextPiece);
         }
  
-    } , 1000);
+    } , 800);
 }
 
 // console.log("Printando matrix:");
