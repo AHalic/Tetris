@@ -19,8 +19,13 @@ export class Game {
         document.getElementById("score").innerHTML = this.score;
         document.getElementById("lines").innerHTML = this.lines;
 
-        this.audioLine = new Audio("audios/mixkit-player-jumping-in-a-video-game-2043.wav");
-        this.audioLine.load();
+
+        this.lineSound = new sound("audios/mixkit-player-jumping-in-a-video-game-2043.mp3");
+        this.themeMusic = new sound("https://www.youtube.com/watch?v=NmCCQxVBfyM");
+        this.themeMusic.play();
+        // this.audioLine = document.createElement("audio");
+        // this.audioLine = new Audio("audios/mixkit-player-jumping-in-a-video-game-2043.wav");
+        // this.audioLine.load();
 
         // Matriz referente as posições do tetris
         // Matriz de comprimento 18x10
@@ -164,7 +169,7 @@ export class Game {
             this.score += score;
             document.getElementById("score").innerHTML = this.score;
             // this.audioLine.src = "audios/mixkit-game-ball-tap-2073.mp3";
-            this.audioLine.play();
+            this.lineSound.play();
             // this.audioLine.autoplay = true;
         }
     }
@@ -178,6 +183,21 @@ export class Game {
 
         return false;
     }
+}
+
+function sound(src) {
+    this.sound = document.createElement("audio");
+    this.sound.src = src;
+    this.sound.setAttribute("preload", "auto");
+    this.sound.setAttribute("controls", "none");
+    this.sound.style.display = "none";
+    document.body.appendChild(this.sound);
+    this.play = function(){
+        this.sound.play();
+    }
+    this.stop = function(){
+        this.sound.pause();
+    }    
 }
 
 // export default Game;
