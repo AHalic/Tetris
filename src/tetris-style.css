@@ -1,11 +1,23 @@
-
-/* The elements styles /*/
 #canvas-1{
     position: absolute;
     top: 50%;
     left: 30%;
     transform: translate(-50% ,-50%);
 }
+
+#marginCanva {
+    position: absolute;
+    top: 50%;
+    left: 30%;
+    transform: translate(-50% ,-50.4%);
+
+    width: 300px;
+    height: 540px;
+
+    border: 4px solid DimGray;
+    padding: 5px;
+}
+
 
 #canvas-2{
     position: absolute;
@@ -35,7 +47,7 @@ left: 45%; */
     text-align: center;
     color: white;
     /* top: 10%; */
-    margin-left: 140px;
+    margin-left: 145px;
     left: 45%;
     bottom: 66%;
     font-size: 50px;
@@ -48,7 +60,7 @@ left: 45%; */
     /* margin-left: 230px; */
     left: 30%;
     /* bottom: 48%; */
-    width: 225px;
+    width: 220px;
     height: 120px;
     /* background-color: red; */
     border: 4px solid DimGray;
@@ -58,11 +70,12 @@ left: 45%; */
     /* box-shadow: 0 0 0 5px red; */
 }
 
+
 #container-score{
     position: absolute;
     text-align: center;
     /* top: 10%; */
-    margin-left: 145px;
+    margin-left: 143px;
     left: 45%;
     /* bottom: 80%; */
     /* font-size: 80px; */
@@ -72,7 +85,7 @@ left: 45%; */
 #container-lines{
     position: absolute;
     text-align: center;
-    margin-left: 55px;
+    margin-left: 48px;
     /* color: white; */
     /* top: 10%; */
     /* margin-left: 230px; */

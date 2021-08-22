@@ -44,12 +44,12 @@ export class Game {
 
     clearBoard(){
         this.boardContext.fillStyle = "#1a1c21";
-        this.boardContext.strokeStyle = "DimGray";
-        this.boardContext.lineWidth = 10;
+        // this.boardContext.strokeStyle = "DimGray";
+        // this.boardContext.lineWidth = 10;
         this.boardContext.fillRect(0, 0, this.board.width, this.board.height);
         this.boardContext.strokeRect(0, 0, this.board.width, this.board.height);
-        this.boardContext.strokeStyle = "black";
-        this.boardContext.lineWidth = 2;
+        // this.boardContext.strokeStyle = "black";
+        // this.boardContext.lineWidth = 2;
 
         // this.boardContext.beginPath();
         // this.boardContext.moveTo(150, 0);
