@@ -19,6 +19,7 @@
 }
 
 
+
 #canvas-2{
     position: absolute;
     top: 30%;
@@ -95,25 +96,12 @@ left: 45%; */
     /* transform: translate(10% ,100%); */
 }
 
-
 /*The black hole*/
 
 svg{
     width: 300px; 
     height: 200px;
 }
-/* 
-#LetterT1,
-#LetterE,
-#LetterT2,
-#LetterR,
-#LetterI,
-#LetterS
-{
-    /*transition: all 1s ease;
-    /*animation: down 3s 1;
-    /*transform: translateY(0%);
-} */
 
 #LetterT1{
     animation: down 2.5s infinite alternate;
@@ -141,30 +129,10 @@ svg{
     animation-delay: 3.5s; /*6.5s*/
 }
 
-
-
-/*svg:hover #LetterT1{*/
-/*      transform: translateY(0%);*/
-/*}*/
-/*svg:hover #LetterT2{*/
-/*    transform: translateY(0%);*/
-/*}*/
-/*svg:hover #LetterE{*/
-/*    transform: translateY(0%);*/
-/*}*/
-/*svg:hover #LetterR{*/
-/*    transform: translateY(0%);*/
-/*}*/
-/*svg:hover #LetterI{*/
-/*    transform: translateY(0%);*/
-/*}*/
-/*svg:hover #LetterS{*/
-/*    transform: translateY(0%);*/
-/*}*/
-
 @keyframes down {
     0% {transform: translateY(0%)}
     50% {transform: translateY(-20%)}
     100% { transform: translateY(0%)}
 }
+
 

@@ -6,11 +6,13 @@
     <!-- Include the style for tetris in another file    -->
     <link rel="icon" href="imgs/icon.svg">
     <link rel="stylesheet" href="src/tetris-style.css">
+    <link rel="stylesheet" href="src/test.css">
 
 </head>
 
 <body>
     <div class="grid-container">
+        <button id="pause_button">Pause</button>
         <div id="marginCanva"></div>
         <div id="canvas-1">
             <canvas id="tetrisboard" width ="300 " height ="540"> </canvas>
@@ -85,8 +87,6 @@
                 </g>
             </g>
         </svg>
-
-        
         <!-- Sorry for this       -->
         <div class="container">
             <div id="square"></div>
@@ -103,9 +103,21 @@
         <div id="canvas-2">
             <canvas id="nextpiece" width ="240" height ="180"> </canvas>
         </div>
-      
+
+    <!-- Pause mode -->
+    </div>
+    <div id="myModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+            <p>Some text in the Modal..</p>
+            <button class="continue">continue</button>
+        </div>
+
     </div>
 
+
+    <script src="src/pause.js"></script>
 
 </body>
 
