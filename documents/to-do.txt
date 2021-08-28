@@ -10,7 +10,7 @@ Falta fazer
         - fundo ok
         - linha completa ok
         - fim do jogo
-    -> peso (se n recebe uma faz tempo dar ela)
+    -> algoritmo de random (se n recebe uma faz tempo dar ela)
     -> level?  (tempo de clock diminuir por level)
     -> tecla q vai o max pra baixo q da (hard drop-space)
     -> peça laranja zoada (clicando na hora q chega no fim ela duplica)
