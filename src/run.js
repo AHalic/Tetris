@@ -10,7 +10,7 @@ function sleep2(milliseconds) {
     } while (currentDate - date < milliseconds);
 }
   
-let pause = true;
+let pause = false;
 let piece, nextPiece;
 let game; // = new Game();
 
@@ -25,6 +25,33 @@ document.addEventListener("keydown", function start(event) {
         runGame();
     }
 });
+
+document.getElementById('pause_button').addEventListener('click', function () {
+    pause = true
+})
+
+document.getElementById('myModal').addEventListener('click', function () {
+    pause = false
+})
+
+// Função que adiciona o evento de ao clicar space bar recomeça o jogo 
+// (chamada apenas ao terminar o jogo)
+function restartGame() {
+    document.addEventListener("keydown", function restart(event) {
+        const SPACE_KEY = 32;
+        const keyPressed = event.keyCode;
+        if (keyPressed == SPACE_KEY) {
+            game.themeMusic.pause();
+            buildGame();
+            // game = new Game();
+            game.themeMusic.play();
+            document.removeEventListener("keydown", restart);
+            runGame();
+        }
+    });
+    
+    alert("Game Over. Press Space to restart.");
+}
 
 function keyEvents(event) {
     const LEFT_KEY = 37;
@@ -55,12 +82,6 @@ function keyEvents(event) {
         game.drawMatrix();
         piece.drawPiece(game.boardContext);
     }
-    // else if (keyPressed == SPACE_KEY) {
-    //     pause = !pause;
-    //     if (!pause) {
-    //         loop()
-    //     }
-    // }
 }
 
 
@@ -68,43 +89,35 @@ function loop(nextPiece){
     // alert("veio");
     setTimeout( function onTick() {
         if (game.over()){
-            document.addEventListener("keydown", function restart(event) {
-                const SPACE_KEY = 32;
-                const keyPressed = event.keyCode;
-                if (keyPressed == SPACE_KEY) {
-                    game.themeMusic.pause();
-                    buildGame();
-                    // game = new Game();
-                    game.themeMusic.play();
-                    document.removeEventListener("keydown", restart);
-                    runGame();
-                }
-            });
-            
-            alert("Game Over. Press Space to restart.");
+            restartGame();
             return;
         }
-
-        game.drawMatrix();
-        piece.drawPiece(game.boardContext);
-
-        let flag = piece.downPiece(game.matrix);
         
-        if(flag){
+        if (!pause) {
+            game.drawMatrix();
+            piece.drawPiece(game.boardContext);
+            console.log(pause)
+
+            let flag = piece.downPiece(game.matrix);
+            
+            if(flag) {
+                loop(nextPiece);
+            }
+            else {
+                game.checkLine();
+                piece = new Piece(nextPiece.getType());
+                
+                let type = Math.round(Math.random() * (7 - 1) +1);
+                nextPiece = new Piece(type, 60);
+                
+                game.clearNextBoard();
+                nextPiece.drawPiece(game.nextBoardContext);
+                loop(nextPiece);
+            }
+        } 
+        else {
             loop(nextPiece);
         }
-        else{
-            game.checkLine();
-            piece = new Piece(nextPiece.getType());
-            
-            let type = Math.round(Math.random() * (7 - 1) +1);
-            nextPiece = new Piece(type, 60);
-            
-            game.clearNextBoard();
-            nextPiece.drawPiece(game.nextBoardContext);
-            loop(nextPiece);
-        }
- 
     } , 800);
 }
 
