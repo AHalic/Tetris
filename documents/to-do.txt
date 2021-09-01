@@ -4,7 +4,7 @@ Falta fazer
     -> limpar linha cheia  ok
 
     -> fazer menu de inicio (press space e começa)
-    -> botão de pausa
+    -> botão de pausa ok
     -> fim do jogo e press space pra recomeçar (??)
     -> musica
         - fundo ok
