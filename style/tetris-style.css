@@ -3,6 +3,7 @@
     top: 50%;
     left: 30%;
     transform: translate(-50% ,-50%);
+
 }
 
 #marginCanva {
@@ -18,14 +19,13 @@
     padding: 5px;
 }
 
-
-
 #canvas-2{
     position: absolute;
     top: 30%;
     margin-left: 120px;
     left: 45%;
     transform: translate(10% ,120%);
+
 }
 
 #title{
@@ -39,12 +39,40 @@
     transform: translate(20% ,120%);
 }
 
+#pause_button:hover{
+    cursor: pointer;
+}
+
+#pause_button{
+    position: absolute;
+    background-color: #141313;
+    color: #eeeeee;
+    font-family: 'GAU_font_cube_B', sans-serif;
+    /*border: 2.5px solid #c4c4c4;*/
+    /*font-size: 20px;*/
+    /*!*top: 57.5vh;*!*/
+    /*!*left: 130vh;*!*/
+    /*top: 57.5%;*/
+    /*left: 62.5%;*/
+    /*margin-left: auto;*/
+    /*margin-bottom: auto;*/
+    /*transform: translate(100% ,0%);*/
+    width: 80px;
+    height: 40px;
+    top: 147.5px;
+    left: 80px;
+    border: 4px solid DimGray;
+
+}
+
+
 /* margin-left: 120px;
 left: 45%; */
 .container{
     position: absolute;
-    /* font-family: 'Roboto'; */
-    font-family: 'Roboto', sans-serif;
+    /*Se quiser definir como Roboto é só descomentar*/
+    /*font-family: 'Roboto', sans-serif;*/
+    font-family: 'GAU_font_cube_B', sans-serif;
     text-align: center;
     color: white;
     /* top: 10%; */
@@ -68,6 +96,7 @@ left: 45%; */
     /* color: white; */
     /* margin: 5px; */
     padding: 5px;
+    background-color: #141313;
     /* box-shadow: 0 0 0 5px red; */
 }
 
