@@ -48,15 +48,6 @@
     background-color: #141313;
     color: #eeeeee;
     font-family: 'GAU_font_cube_B', sans-serif;
-    /*border: 2.5px solid #c4c4c4;*/
-    /*font-size: 20px;*/
-    /*!*top: 57.5vh;*!*/
-    /*!*left: 130vh;*!*/
-    /*top: 57.5%;*/
-    /*left: 62.5%;*/
-    /*margin-left: auto;*/
-    /*margin-bottom: auto;*/
-    /*transform: translate(100% ,0%);*/
     width: 80px;
     height: 40px;
     top: 147.5px;
@@ -65,9 +56,6 @@
 
 }
 
-
-/* margin-left: 120px;
-left: 45%; */
 .container{
     position: absolute;
     /*Se quiser definir como Roboto é só descomentar*/
@@ -80,8 +68,6 @@ left: 45%; */
     left: 45%;
     bottom: 66%;
     font-size: 50px;
-    /* transform: translate(10% ,120%); */
-    /* transform: translate(10% ,100%); */
 }
 
 #square {
