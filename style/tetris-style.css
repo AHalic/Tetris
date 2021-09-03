@@ -1,17 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Bungee&family=Concert+One&family=Press+Start+2P&display=swap');
 #canvas-1{
     position: absolute;
-    top: 50%;
-    left: 30%;
-    transform: translate(-50% ,-50%);
-
+    /* top: 13%;
+    left: 19%; */
+    /* top: 1%; */
+    /* left: %; */
+    /* transform: translate(-50% ,-50%); */
 }
 
 #marginCanva {
     position: absolute;
-    top: 50%;
-    left: 30%;
-    transform: translate(-50% ,-50.4%);
-
+    /* top: 10%; */
+    /* left: 10%; */
+    /* transform: translate(-50% ,-50.4%); */
+    /* top: 11.7%;
+    left: 18.3%; */
     width: 300px;
     height: 540px;
 
@@ -19,24 +22,46 @@
     padding: 5px;
 }
 
-#canvas-2{
+.container{
     position: absolute;
-    top: 30%;
-    margin-left: 120px;
-    left: 45%;
-    transform: translate(10% ,120%);
+    /*Se quiser definir como Roboto é só descomentar*/
+    /* font-family: 'Roboto', sans-serif; */
+    /* font-family: 'GAU_font_cube_B', sans-serif; */
+    /* font-family: 'Press Start 2P', cursive; */
+    /* font-family: 'Concert One', cursive; */
+    /* font-family: 'Bungee', cursive; */
+    font-family: 'Concert One', cursive;
+    text-align: center;
+    color: white;
+    /* top: 10vh; */
+    margin-left: 400px;
+    margin-top: 100px;
+    /* left: 45%;
+    bottom: 72%;  */
+    /* top: 25%; */
+    /* left: 100%; */
+    /* transform: translate(100% ,-50%); */
+    font-size: 50px;
+}
 
+.grid-container {
+    position: absolute;
+    /* margin: auto; */
+    top: 20vh;
+    /* padding: 10%; */
+    left: 25vw;
+    /* transform: translate(-50% ,-50%); */
 }
 
 #title{
     position: absolute;
-    /* top: -25%;
-    left: 53%; */
-    bottom: 110%;
-    margin-left: 80px;
-    left: 42%;
-    margin-bottom: auto;
-    transform: translate(20% ,120%);
+    /* margin: 0 0 0 0; */
+    /* top: -50%; */
+    bottom: 130%;
+    /* margin-left: 80px; */
+    /* left: 30%; */
+    /* margin-bottom: auto; */
+    /* transform: translate(20% ,120%); */
 }
 
 #pause_button:hover{
@@ -47,33 +72,30 @@
     position: absolute;
     background-color: #141313;
     color: #eeeeee;
-    font-family: 'GAU_font_cube_B', sans-serif;
+    /* font-family: 'GAU_font_cube_B', sans-serif; */
+    font-family: 'Press Start 2P', cursive;
+    /* font-family: 'Roboto', sans-serif; */
+    /* font-family: 'Concert One', cursive; */
     width: 80px;
     height: 40px;
-    top: 147.5px;
+    top: 148px;
     left: 80px;
     border: 4px solid DimGray;
-
 }
 
-.container{
+#canvas-2{
     position: absolute;
-    /*Se quiser definir como Roboto é só descomentar*/
-    /*font-family: 'Roboto', sans-serif;*/
-    font-family: 'GAU_font_cube_B', sans-serif;
-    text-align: center;
-    color: white;
-    /* top: 10%; */
-    margin-left: 145px;
-    left: 45%;
-    bottom: 66%;
-    font-size: 50px;
+    top: 200px;
+    /* margin-left: 120px; */
+    left: 50%;
+    margin-top: 40px;
+    /* transform: translate(10% ,120%); */
 }
 
 #square {
     position: absolute;
     /* margin-left: 230px; */
-    left: 30%;
+    /* left: 30%; */
     /* bottom: 48%; */
     width: 220px;
     height: 120px;
@@ -83,6 +105,7 @@
     /* margin: 5px; */
     padding: 5px;
     background-color: #141313;
+    margin-top: 40px;
     /* box-shadow: 0 0 0 5px red; */
 }
 
@@ -91,8 +114,8 @@
     position: absolute;
     text-align: center;
     /* top: 10%; */
-    margin-left: 143px;
-    left: 45%;
+    margin-left: 120px;
+    /* left: 45%; */
     /* bottom: 80%; */
     /* font-size: 80px; */
     /* transform: translate(10% ,100%); */
@@ -101,7 +124,7 @@
 #container-lines{
     position: absolute;
     text-align: center;
-    margin-left: 48px;
+    margin-left: 20px;
     /* color: white; */
     /* top: 10%; */
     /* margin-left: 230px; */
@@ -119,34 +142,34 @@ svg{
 }
 
 #LetterT1{
-    animation: down 2.5s infinite alternate;
+    animation: down 2s infinite alternate;
     animation-delay: 1s;
 
 }
 #LetterE{
-    animation: down 2.5s infinite alternate;
-    animation-delay: 1.5s; /*1.2*/
+    animation: down 2s infinite alternate;
+    animation-delay: 1.25s; /*1.2*/
 }
 #LetterT2{
-    animation: down 2.5s infinite alternate;
-    animation-delay: 2s; /*3.4s*/
+    animation: down 2s infinite alternate;
+    animation-delay: 1.5s; /*3.4s*/
 }
 #LetterR{
-    animation: down 2.5s infinite alternate;
-    animation-delay: 2.5s; /*4.6s*/
+    animation: down 2s infinite alternate;
+    animation-delay: 1.75s; /*4.6s*/
 }
 #LetterI{
-    animation: down 2.5s infinite alternate;
-    animation-delay: 3s; /*5.8s*/
+    animation: down 2s infinite alternate;
+    animation-delay: 2s; /*5.8s*/
 }
 #LetterS {
-    animation: down 2.5s infinite alternate;
-    animation-delay: 3.5s; /*6.5s*/
+    animation: down 2s infinite alternate;
+    animation-delay: 2.25s; /*6.5s*/
 }
 
 @keyframes down {
     0% {transform: translateY(0%)}
-    50% {transform: translateY(-20%)}
+    50% {transform: translateY(-10%)}
     100% { transform: translateY(0%)}
 }
 
