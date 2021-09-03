@@ -58,7 +58,8 @@ export class Game {
     }
 
     clearNextBoard(){
-        this.nextBoardContext.fillStyle = "#101417FF";
+        // this.nextBoardContext.fillStyle = "#101417FF";
+        this.nextBoardContext.fillStyle = "#141313";
         this.nextBoardContext.lineWidth = 10;
         this.nextBoardContext.strokeStyle = "DimGray";
         this.nextBoardContext.fillRect(0, 0, this.nextBoard.width, this.nextBoard.height);
