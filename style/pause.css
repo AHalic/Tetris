@@ -47,6 +47,7 @@
     /* font-family: 'GAU_font_cube_B', sans-serif; */
     font-family: 'Press Start 2P', cursive;
     font-weight: bold;
+    transition: all 0.3s ease 0s;
 }
 
 .continue:hover,
@@ -54,4 +55,5 @@
     color: #44BC74;
     text-decoration: none;
     cursor: pointer;
+    background-color: #181818;
 }
