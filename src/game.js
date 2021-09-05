@@ -81,25 +81,25 @@ export class Game {
                     
                 switch(this.matrix[i][j]){
                     case(1):
-                        color = 'purple';
+                        color = '#372780'; // purple
                         break;
                     case(2):
-                        color = 'green';
+                        color = '#4f8d23'; // green
                         break;
                     case(3):
-                        color = 'orange';
+                        color = '#e05d1a'; // orange
                         break;
                     case(4):
-                        color = 'blue';
+                        color = '#2c5499'; // blue
                         break;
                     case(5):
-                        color = 'yellow';
+                        color = '#e8c917'; // yellow
                         break;
                     case(6):
-                        color = 'brown';
+                        color = '#b9231f'; // brown
                         break;
                     case(7):
-                        color = 'magenta';
+                        color = '#ed4974'; // magenta
                         break;
                 }
 

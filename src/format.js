@@ -2,7 +2,7 @@ import Block from './block.js';
 
 export class Format1{
     constructor(x=0){
-        this.piece =  Array(new Block('purple', 90-x/2, x), new Block('purple', 120-x/2, x), new Block('purple', 120-x/2, x+30), new Block('purple', 150-x/2, x));
+        this.piece =  Array(new Block('#372780', 90-x/2, x), new Block('#372780', 120-x/2, x), new Block('#372780', 120-x/2, x+30), new Block('#372780', 150-x/2, x));
     }
 
     rotate(rotation){
@@ -50,7 +50,7 @@ export class Format1{
 
 export class Format2{
     constructor(x=0){
-        this.piece =  Array(new Block('green', 90-x/2, x), new Block('green', 120-x/2, x), new Block('green', 120-x/2, x+30), new Block('green', 150-x/2, x+30));
+        this.piece =  Array(new Block('#4f8d23', 90-x/2, x), new Block('#4f8d23', 120-x/2, x), new Block('#4f8d23', 120-x/2, x+30), new Block('#4f8d23', 150-x/2, x+30));
     }
     
     rotate(rotation){
@@ -85,7 +85,7 @@ export class Format2{
 
 export class Format3{
     constructor(x=0){
-        this.piece =  Array(new Block('orange', 90-x/2, x), new Block('orange', 120-x/2, x), new Block('orange', 150-x/2, x), new Block('orange', 180-x/2, x));
+        this.piece =  Array(new Block('#e05d1a', 90-x/2, x), new Block('#e05d1a', 120-x/2, x), new Block('#e05d1a', 150-x/2, x), new Block('#e05d1a', 180-x/2, x));
     }
     
     rotate(rotation){ 
@@ -119,7 +119,7 @@ export class Format3{
 
 export class Format4{
     constructor(x=0){
-        this.piece =  Array(new Block('blue', 90-x/2, x), new Block('blue', 90-x/2, x+30), new Block('blue', 120-x/2, x), new Block('blue', 150-x/2, x));
+        this.piece =  Array(new Block('#2c5499', 90-x/2, x), new Block('#2c5499', 90-x/2, x+30), new Block('#2c5499', 120-x/2, x), new Block('#2c5499', 150-x/2, x));
     }
 
     rotate(rotation){
@@ -167,7 +167,7 @@ export class Format4{
 
 export class Format5{
     constructor(x=0){
-        this.piece =  Array(new Block('yellow', 90-x/2, x), new Block('yellow', 120-x/2, x), new Block('yellow', 150-x/2, x), new Block('yellow', 150-x/2, x+30));
+        this.piece =  Array(new Block('#e8c917', 90-x/2, x), new Block('#e8c917', 120-x/2, x), new Block('#e8c917', 150-x/2, x), new Block('#e8c917', 150-x/2, x+30));
     }
     
     rotate(rotation){
@@ -215,7 +215,7 @@ export class Format5{
 
 export class Format6{
     constructor(x=0){
-        this.piece =  Array(new Block('brown', 90-x/2, x+30), new Block('brown', 120-x/2, x+30), new Block('brown', 120-x/2, x), new Block('brown', 150-x/2, x));
+        this.piece =  Array(new Block('#b9231f', 90-x/2, x+30), new Block('#b9231f', 120-x/2, x+30), new Block('#b9231f', 120-x/2, x), new Block('#b9231f', 150-x/2, x));
     }
     
     rotate(rotation){
@@ -249,7 +249,7 @@ export class Format6{
 
 export class Format7{
     constructor(x=0){
-        this.piece =  Array(new Block('magenta', 120-x/2, x), new Block('magenta', 120-x/2, x+30), new Block('magenta', 150-x/2, x), new Block('magenta', 150-x/2, x+30));
+        this.piece =  Array(new Block('#ed4974', 120-x/2, x), new Block('#ed4974', 120-x/2, x+30), new Block('#ed4974', 150-x/2, x), new Block('#ed4974', 150-x/2, x+30));
     }
 
     rotate(){

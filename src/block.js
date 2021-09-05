@@ -9,9 +9,13 @@ class Block {
 
     drawBlock(boardContext) {
         boardContext.fillStyle = this.color;
-        boardContext.strokestyle = 'black';
+        boardContext.lineWidth = 3;
+        boardContext.strokeStyle = '#17181B';
+        boardContext.lineCap = 'round';
+
         boardContext.fillRect(this.x , this.y , 30, 30);
         boardContext.strokeRect(this.x , this.y , 30, 30);
+
     }
 
     down(){
