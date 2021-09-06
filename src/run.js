@@ -69,7 +69,7 @@ function keyEvents(event) {
     const RIGHT_KEY = 39;
     const UP_KEY = 38;
     const DOWN_KEY = 40;
-    const SPACE_KEY = 32;
+    const SHIFT_KEY = 16;
     const keyPressed = event.keyCode;
 
     if (keyPressed == DOWN_KEY) {
@@ -90,6 +90,11 @@ function keyEvents(event) {
     }
     else if (keyPressed == RIGHT_KEY) {
         piece.rightPiece(game.matrix);
+        game.drawMatrix();
+        piece.drawPiece(game.boardContext);
+    }
+    else if (keyPressed == SHIFT_KEY) {
+        while (piece.downPiece(game.matrix));
         game.drawMatrix();
         piece.drawPiece(game.boardContext);
     }
