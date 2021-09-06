@@ -1,0 +1,38 @@
+:root{
+    --dark-color: #000;
+    --light-color: #F09422;
+}
+
+.menuLogo {
+    display: block;
+    margin: auto;
+}
+
+#text {
+    font-family: 'Concert One', cursive;
+    text-align: center;
+    color: rgb(213, 211, 211);
+    animation: fadein 3s forwards;
+}
+
+@keyframes fadein {
+  0% { opacity: 0; }
+  90% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+#LetterMenuT1,
+#LetterMenuT2,
+#LetterMenuE,
+#LetterMenuR,
+#LetterMenuI,
+#LetterMenuS{
+    transform: translateY(-100%);
+    animation: downMenu 2s forwards;
+    animation-delay: 0.5s; 
+}
+
+@keyframes downMenu {
+    0% {transform: translateY(-100%)}
+    100% {transform: translateY(0%)}
+}
