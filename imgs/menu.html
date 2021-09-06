@@ -1,0 +1,106 @@
+<html>
+	<head>
+		<meta charset="UTF-8"/>
+		<title>Tetris prototype</title>
+		<style>
+		:root{
+			--dark-color: #000;
+			--light-color: #F09422;
+		}
+
+		svg{
+			display: block;
+			margin: auto;
+		}
+
+
+		#LetterT1,
+		#LetterT2,
+		#LetterE,
+		#LetterR,
+		#LetterI,
+		#LetterS{
+			transform: translateY(-100%);
+			animation: down 2s forwards;
+			animation-delay: 1.5s; 
+		}
+
+		@keyframes down {
+			0% {transform: translateY(-100%)}
+			100% {transform: translateY(0%)}
+		}
+		
+		</style>
+	</head>
+	<body>
+		<svg width="1000" height="540" viewBox="0 0 1000 540" fill="none" xmlns="http://www.w3.org/2000/svg">
+			<g id="Frame 1">
+			<rect width="1000" height="540" fill="white"/>
+			<g id="LetterT1">
+			<rect id="Rec" x="349.5" y="144.5" width="51" height="51" rx="10.5" fill="#0FBA65" stroke="#141313"/>
+			<rect id="Rec_2" x="399.5" y="144.5" width="51" height="51" rx="10.5" fill="#0FBA65" stroke="#141313"/>
+			<rect id="Rec_3" x="449.5" y="144.5" width="51" height="51" rx="10.5" fill="#0FBA65" stroke="#141313"/>
+			<rect id="Rec_4" x="399.5" y="194.5" width="51" height="51" rx="10.5" fill="#0FBA65" stroke="#141313"/>
+			<rect id="Rec_5" x="399.5" y="244.5" width="51" height="51" rx="10.5" fill="#0FBA65" stroke="#141313"/>
+			<rect id="Rec_6" x="399.5" y="344.5" width="51" height="51" rx="10.5" fill="#0FBA65" stroke="#141313"/>
+			<rect id="Rec_7" x="399.5" y="294.5" width="51" height="51" rx="10.5" fill="#0FBA65" stroke="#141313"/>
+			</g>
+			<g id="LetterT2">
+			<rect id="Rec_8" x="24.5" y="144.5" width="51" height="51" rx="10.5" fill="#0FBA65" stroke="#141313"/>
+			<rect id="Rec_9" x="74.5" y="144.5" width="51" height="51" rx="10.5" fill="#0FBA65" stroke="#141313"/>
+			<rect id="Rec_10" x="124.5" y="144.5" width="51" height="51" rx="10.5" fill="#0FBA65" stroke="#141313"/>
+			<rect id="Rec_11" x="74.5" y="194.5" width="51" height="51" rx="10.5" fill="#0FBA65" stroke="#141313"/>
+			<rect id="Rec_12" x="74.5" y="244.5" width="51" height="51" rx="10.5" fill="#0FBA65" stroke="#141313"/>
+			<rect id="Rec_13" x="74.5" y="344.5" width="51" height="51" rx="10.5" fill="#0FBA65" stroke="#141313"/>
+			<rect id="Rec_14" x="74.5" y="294.5" width="51" height="51" rx="10.5" fill="#0FBA65" stroke="#141313"/>
+			</g>
+			<g id="LetterR">
+			<rect id="Rec_15" x="527.5" y="194.5" width="51" height="51" rx="10.5" fill="#620FBA" stroke="#141313"/>
+			<rect id="Rec_16" x="527.5" y="144.5" width="51" height="51" rx="10.5" fill="#620FBA" stroke="#141313"/>
+			<rect id="Rec_17" x="577.5" y="144.5" width="51" height="51" rx="10.5" fill="#620FBA" stroke="#141313"/>
+			<rect id="Rec_18" x="527.5" y="344.5" width="51" height="51" rx="10.5" fill="#620FBA" stroke="#141313"/>
+			<rect id="Rec_19" x="527.5" y="244.5" width="51" height="51" rx="10.5" fill="#620FBA" stroke="#141313"/>
+			<rect id="Rec_20" x="527.5" y="294.5" width="51" height="51" rx="10.5" fill="#620FBA" stroke="#141313"/>
+			<rect id="Rec_21" x="577.5" y="294.5" width="51" height="51" rx="10.5" fill="#620FBA" stroke="#141313"/>
+			<rect id="Rec_22" x="627.5" y="144.5" width="51" height="51" rx="10.5" fill="#620FBA" stroke="#141313"/>
+			<rect id="Rec_23" x="627.5" y="194.5" width="51" height="51" rx="10.5" fill="#620FBA" stroke="#141313"/>
+			<rect id="Rec_24" x="627.5" y="344.5" width="51" height="51" rx="10.5" fill="#620FBA" stroke="#141313"/>
+			<rect id="Rec_25" x="577.5" y="244.5" width="51" height="51" rx="10.5" fill="#620FBA" stroke="#141313"/>
+			<rect id="Rec_26" x="627.5" y="244.5" width="51" height="51" rx="10.5" fill="#620FBA" stroke="#141313"/>
+			</g>
+			<g id="LetterI">
+			<rect id="Rec_27" x="711.5" y="144.5" width="51" height="51" rx="10.5" fill="#CD1E41" stroke="#141313"/>
+			<rect id="Rec_28" x="711.5" y="244.5" width="51" height="51" rx="10.5" fill="#CD1E41" stroke="#141313"/>
+			<rect id="Rec_29" x="711.5" y="294.5" width="51" height="51" rx="10.5" fill="#CD1E41" stroke="#141313"/>
+			<rect id="Rec_30" x="711.5" y="344.5" width="51" height="51" rx="10.5" fill="#CD1E41" stroke="#141313"/>
+			</g>
+			<g id="LetterS">
+			<rect id="Rec_31" x="803.5" y="144.5" width="51" height="51" rx="10.5" fill="#E67505" stroke="#141313"/>
+			<rect id="Rec_32" x="803.5" y="194.5" width="51" height="51" rx="10.5" fill="#E67505" stroke="#141313"/>
+			<rect id="Rec_33" x="803.5" y="244.5" width="51" height="51" rx="10.5" fill="#E67505" stroke="#141313"/>
+			<rect id="Rec_34" x="853.5" y="244.5" width="51" height="51" rx="10.5" fill="#E67505" stroke="#141313"/>
+			<rect id="Rec_35" x="903.5" y="244.5" width="51" height="51" rx="10.5" fill="#E67505" stroke="#141313"/>
+			<rect id="Rec_36" x="853.5" y="144.5" width="51" height="51" rx="10.5" fill="#E67505" stroke="#141313"/>
+			<rect id="Rec_37" x="903.5" y="144.5" width="51" height="51" rx="10.5" fill="#E67505" stroke="#141313"/>
+			<rect id="Rec_38" x="803.5" y="344.5" width="51" height="51" rx="10.5" fill="#E67505" stroke="#141313"/>
+			<rect id="Rec_39" x="853.5" y="344.5" width="51" height="51" rx="10.5" fill="#E67505" stroke="#141313"/>
+			<rect id="Rec_40" x="903.5" y="344.5" width="51" height="51" rx="10.5" fill="#E67505" stroke="#141313"/>
+			<rect id="Rec_41" x="903.5" y="294.5" width="51" height="51" rx="10.5" fill="#E67505" stroke="#141313"/>
+			</g>
+			<g id="LetterE">
+			<rect id="Rec_42" x="202.5" y="194.5" width="51" height="51" rx="10.5" fill="#0F76BA" stroke="#141313"/>
+			<rect id="Rec_43" x="252.5" y="144.5" width="51" height="51" rx="10.5" fill="#0F76BA" stroke="#141313"/>
+			<rect id="Rec_44" x="202.5" y="244.5" width="51" height="51" rx="10.5" fill="#0F76BA" stroke="#141313"/>
+			<rect id="Rec_45" x="252.5" y="244.5" width="51" height="51" rx="10.5" fill="#0F76BA" stroke="#141313"/>
+			<rect id="Rec_46" x="202.5" y="294.5" width="51" height="51" rx="10.5" fill="#0F76BA" stroke="#141313"/>
+			<rect id="Rec_47" x="202.5" y="344.5" width="51" height="51" rx="10.5" fill="#0F76BA" stroke="#141313"/>
+			<rect id="Rec_48" x="252.5" y="344.5" width="51" height="51" rx="10.5" fill="#0F76BA" stroke="#141313"/>
+			<rect id="Rec_49" x="202.5" y="144.5" width="51" height="51" rx="10.5" fill="#0F76BA" stroke="#141313"/>
+			</g>
+			</g>
+		</svg>
+					
+		
+					
+	</body>
+</html>
