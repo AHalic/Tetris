@@ -19,9 +19,20 @@ document.addEventListener("keydown", function start(event) {
     const SPACE_KEY = 32;
     const keyPressed = event.keyCode;
     if (keyPressed == SPACE_KEY) {
+        
+        // Some menu
+        document.getElementsByClassName("menu")[0].style.display = "none";
+        // Aparece jogo
+        document.getElementsByClassName("grid-container")[0].style.display = "inline";
+
+        // Load game
         game = new Game();
         game.themeMusic.play();
         document.removeEventListener("keydown", start);
+        
+        
+        // Delay
+        //await new Promise(r => setTimeout(r, 2000))
         runGame();
     }
 });
