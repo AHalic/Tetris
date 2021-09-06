@@ -11,15 +11,20 @@
 #text {
     font-family: 'Concert One', cursive;
     text-align: center;
-    color: rgb(213, 211, 211);
-    animation: fadein 3s forwards;
+    color: rgb(120, 124, 128);
+    animation: fadein 7s infinite;
+    /* animation: fadein 3s forwards; */
 }
 
 @keyframes fadein {
   0% { opacity: 0; }
-  90% { opacity: 0; }
-  100% { opacity: 1; }
+  20% { opacity: 0; }
+  40% { opacity: 1; }
+  60% { opacity: 0; }
+  90% { opacity: 1; }
+  100% { opacity: 0; }
 }
+
 
 #LetterMenuT1,
 #LetterMenuT2,
