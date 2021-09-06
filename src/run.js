@@ -15,7 +15,7 @@ let piece, nextPiece;
 let game; // = new Game();
 
 // Inicia o jogo (só acontece uma vez)
-document.addEventListener("keydown", function start(event) {
+document.addEventListener("keydown", async function start(event) {
     const SPACE_KEY = 32;
     const keyPressed = event.keyCode;
     if (keyPressed == SPACE_KEY) {
@@ -32,7 +32,7 @@ document.addEventListener("keydown", function start(event) {
         
         
         // Delay
-        //await new Promise(r => setTimeout(r, 2000))
+        await new Promise(r => setTimeout(r, 1500));
         runGame();
     }
 });
