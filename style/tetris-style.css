@@ -45,6 +45,7 @@
 }
 
 .grid-container {
+    display: none;
     position: absolute;
     /* margin: auto; */
     /*Eu estive aqui -> top: 20vh;*/
@@ -161,10 +162,11 @@
 
 /*The black hole*/
 
-svg{
+.jumpingLogo{
     width: 300px; 
     height: 200px;
 }
+
 
 #LetterT1{
     animation: down 2s infinite alternate;
