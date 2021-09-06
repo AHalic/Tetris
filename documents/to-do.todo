@@ -1,19 +1,20 @@
 Falta fazer
-    -> contar pontuação (linhas) ok
-    -> bonus de linhas ok
-    -> limpar linha cheia  ok
+    ✔ contar pontuação (linhas) @done(21-09-06 02:34)
+    ✔ bonus de linhas @done(21-09-06 02:34)
+    ✔ limpar linha cheia @done(21-09-06 02:34)
 
-    -> fazer menu de inicio (press space e começa)
-    -> botão de pausa ok
-    -> fim do jogo e press space pra recomeçar (??)
-    -> musica
-        - fundo ok
-        - linha completa ok
-        - fim do jogo
-    -> algoritmo de random (se n recebe uma faz tempo dar ela)
-    -> level?  (tempo de clock diminuir por level)
-    -> tecla q vai o max pra baixo q da (hard drop-space)
-    -> peça laranja zoada (clicando na hora q chega no fim ela duplica)
+    ✔ fazer menu de inicio (press space e começa) @done(21-09-06 02:34)
+    ✔ botão de pausa @done(21-09-06 02:34)
+    ☐ fim do jogo e press space pra recomeçar (??)
+    ☐ musica
+        ✔ fundo @done(21-09-06 02:34)
+        ✔ linha completa @done(21-09-06 02:35)
+        ☐ fim do jogo
+    ☐ algoritmo de random (se n recebe uma faz tempo dar ela)
+    ☐ level?  (tempo de clock diminuir por level)
+    ☐ tecla q vai o max pra baixo q da (hard drop-space)
+    ☐ peça laranja zoada (clicando na hora q chega no fim ela duplica)
+        (verificar)
 
 
 ----------------------------------------------------------
