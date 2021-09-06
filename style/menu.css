@@ -11,6 +11,7 @@
 #text {
     font-family: 'Concert One', cursive;
     text-align: center;
+    font-size: 22px;
     color: rgb(120, 124, 128);
     animation: fadein 7s infinite;
     /* animation: fadein 3s forwards; */
