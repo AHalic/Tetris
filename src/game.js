@@ -24,8 +24,8 @@ export class Game {
         this.lineSound.load();
         this.themeMusic.load();
         this.themeMusic.loop = true;
-        this.lineSound.volume = 0.2;
-        this.themeMusic.volume = 0.1;
+        this.lineSound.volume = 0.1;
+        this.themeMusic.volume = 0.025;
 
         // this.audioLine = document.createElement("audio");
         // this.audioLine = new Audio("audios/mixkit-player-jumping-in-a-video-game-2043.wav");
@@ -81,25 +81,32 @@ export class Game {
                     
                 switch(this.matrix[i][j]){
                     case(1):
-                        color = '#372780'; // purple
+                        // color = '#372780'; // purple
+                        color = '#6A31D1'; // purple
                         break;
                     case(2):
-                        color = '#4f8d23'; // green
+                        // color = '#4f8d23'; // green
+                        color = '#73BC38'; // green
                         break;
                     case(3):
-                        color = '#e05d1a'; // orange
+                        // color = '#e05d1a'; // orange
+                        color = '#FFA704'; // orange
                         break;
                     case(4):
-                        color = '#2c5499'; // blue
+                        // color = '#2c5499'; // blue
+                        color = '#07ACD5'; // blue
                         break;
                     case(5):
-                        color = '#e8c917'; // yellow
+                        // color = '#e8c917'; // yellow
+                        color = '#FFE02C'; // yellow
                         break;
                     case(6):
-                        color = '#b9231f'; // brown
+                        // color = '#b9231f'; // red
+                        color = '#E92F3A'; // red
                         break;
                     case(7):
-                        color = '#ed4974'; // magenta
+                        // color = '#ed4974'; // magenta
+                        color = '#E75FAD'; // magenta
                         break;
                 }
 
