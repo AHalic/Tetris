@@ -37,12 +37,30 @@ document.addEventListener("keydown", async function start(event) {
     }
 });
 
+
+// Eventos de pausar o jogo
 document.getElementById('pause_button').addEventListener('click', function () {
     pause = true
+    document.removeEventListener("keydown", keyEvents);
 })
 
-document.getElementById('myModal').addEventListener('click', function () {
-    pause = false
+document.getElementById('options_button').addEventListener('click', function () {
+    pause = true;
+    document.removeEventListener("keydown", keyEvents);
+})
+
+document.getElementById('myPause').addEventListener('click', function () {
+    if (document.getElementById('myPause').style.display == "none") {
+        pause = false;
+        document.addEventListener("keydown", keyEvents);
+    }
+})
+
+document.getElementById('myOptions').addEventListener('click', function () {
+    if (document.getElementById('myOptions').style.display == "none") {
+        pause = false;
+        document.addEventListener("keydown", keyEvents);
+    }
 })
 
 // Função que adiciona o evento de ao clicar space bar recomeça o jogo 
@@ -112,7 +130,7 @@ function loop(nextPiece){
         if (!pause) {
             game.drawMatrix();
             piece.drawPiece(game.boardContext);
-            console.log(pause)
+            // console.log(pause)
 
             let flag = piece.downPiece(game.matrix);
             

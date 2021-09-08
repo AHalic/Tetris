@@ -15,21 +15,41 @@ export class Game {
         this.score = 0;
         this.lines = 0;
 
+        let sound = true;
+
         document.getElementById("score").innerHTML = this.score;
         document.getElementById("lines").innerHTML = this.lines;
 
-
-        this.lineSound = new Audio("audios/mixkit-player-jumping-in-a-video-game-2043.mp3");
-        this.themeMusic = new Audio("audios/themeSong.mp3");
-        this.lineSound.load();
-        this.themeMusic.load();
-        this.themeMusic.loop = true;
-        this.lineSound.volume = 0.1;
-        this.themeMusic.volume = 0.025;
-
-        // this.audioLine = document.createElement("audio");
-        // this.audioLine = new Audio("audios/mixkit-player-jumping-in-a-video-game-2043.wav");
-        // this.audioLine.load();
+        this.audioLoad();
+        let music = this.themeMusic;
+        let lineSound = this.lineSound;
+        // this.muteGameEvent();
+        
+        document.getElementById("soundButton").addEventListener("click", function mute() {
+            if (sound) {
+                console.log("no prim");
+                music.muted = true;
+                lineSound.muted = true;
+                document.getElementsByClassName("sound-image")[0].src = "imgs/mute.png";
+                document.getElementsByClassName("sound-image")[0].style = "height: 63px; width: 63px"
+            }
+            
+            else {
+                console.log("no seg");
+                music.muted = false;
+                lineSound.muted = false;
+                document.getElementsByClassName("sound-image")[0].src = "imgs/sound.png";
+                document.getElementsByClassName("sound-image")[0].style = "height: 52px; width: 52px"
+            }
+            sound = !sound
+            // document.getElementById("soundButton").removeEventListener("click", unmute);
+            // // Game.muteGameEvent(music, lineSound);
+            // document.getElementById("soundButton").addEventListener("click", mute(music, lineSound));
+            
+            // document.getElementById("soundButton").addEventListener("click", function unmute() {
+            // });
+        });
+        
 
         // Matriz referente as posições do tetris
         // Matriz de comprimento 18x10
@@ -196,6 +216,37 @@ export class Game {
         }
 
         return false;
+    }
+
+    muteGameEvent() {
+        // document.getElementById("soundButton").addEventListener("click", function mute(event) {
+        //     this.themeMusic.pause();
+        //     this.lineSound.pause();
+        //     document.getElementById("soundButton").src = "imgs/mute.png";
+        //     document.getElementById("soundButton").removeEventListener("click", mute());
+        //     this.unmuteGameEvent();
+        // });
+        document.getElementById("soundButton").onclick()
+    }
+    unmuteGameEvent(music, lineSound) {
+        document.getElementById("soundButton").addEventListener("click", function unmute() {
+            music.play();
+            lineSound.play();
+            document.getElementById("soundButton").src = "imgs/4f7b7fff8862568.png";
+            document.getElementById("soundButton").removeEventListener("click", unmute);
+            // Game.muteGameEvent(music, lineSound);
+            document.getElementById("soundButton").addEventListener("click", mute(music, lineSound));
+        });
+    }
+
+    audioLoad() {
+        this.lineSound = new Audio("audios/mixkit-player-jumping-in-a-video-game-2043.mp3");
+        this.themeMusic = new Audio("audios/themeSong.mp3");
+        this.lineSound.load();
+        this.themeMusic.load();
+        this.themeMusic.loop = true;
+        this.lineSound.volume = 0.1;
+        this.themeMusic.volume = 0.025;
     }
 }
 
