@@ -1,4 +1,4 @@
-
+import Block from "./block.js";
 
 export class Game {
     constructor(){
@@ -98,7 +98,7 @@ export class Game {
             for(let j=0; j<10; j++){
                 if(this.matrix[i][j] == 0)
                     continue;
-                    
+
                 switch(this.matrix[i][j]){
                     case(1):
                         // color = '#372780'; // purple
@@ -133,10 +133,20 @@ export class Game {
                 x = j*30;
                 y = i*30;
 
-                this.boardContext.fillStyle = color;
-                this.boardContext.strokestyle = 'black';
-                this.boardContext.fillRect(x , y , 30, 30);
+                let blockImg = new Image();
+                blockImg.src = Block.defineColorBlock(color);
+                this.boardContext.drawImage(blockImg, x, y, 30, 30);
+
+                this.boardContext.lineWidth = 3;
+                this.boardContext.strokeStyle = '#17181B';
+                this.boardContext.lineCap = 'round';
                 this.boardContext.strokeRect(x , y , 30, 30);
+
+                /* Se gostarem do visual de block deve-se apagar o comentário*/
+                // this.boardContext.fillStyle = color;
+                // this.boardContext.strokestyle = 'black';
+                // this.boardContext.fillRect(x , y , 30, 30);
+                // this.boardContext.strokeRect(x , y , 30, 30);
             }
         }
     }
