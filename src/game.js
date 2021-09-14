@@ -64,17 +64,8 @@ export class Game {
 
     clearBoard(){
         this.boardContext.fillStyle = "#1a1c21";
-        // this.boardContext.strokeStyle = "DimGray";
-        // this.boardContext.lineWidth = 10;
         this.boardContext.fillRect(0, 0, this.board.width, this.board.height);
         this.boardContext.strokeRect(0, 0, this.board.width, this.board.height);
-        // this.boardContext.strokeStyle = "black";
-        // this.boardContext.lineWidth = 2;
-
-        // this.boardContext.beginPath();
-        // this.boardContext.moveTo(150, 0);
-        // this.boardContext.lineTo(150, this.board.height);
-        // this.boardContext.stroke();
     }
 
     clearNextBoard(){
@@ -133,6 +124,7 @@ export class Game {
                 x = j*30;
                 y = i*30;
 
+
                 let blockImg = new Image();
                 blockImg.src = Block.defineColorBlock(color);
                 this.boardContext.drawImage(blockImg, x, y, 30, 30);
@@ -141,12 +133,6 @@ export class Game {
                 this.boardContext.strokeStyle = '#17181B';
                 this.boardContext.lineCap = 'round';
                 this.boardContext.strokeRect(x , y , 30, 30);
-
-                /* Se gostarem do visual de block deve-se apagar o comentário*/
-                // this.boardContext.fillStyle = color;
-                // this.boardContext.strokestyle = 'black';
-                // this.boardContext.fillRect(x , y , 30, 30);
-                // this.boardContext.strokeRect(x , y , 30, 30);
             }
         }
     }

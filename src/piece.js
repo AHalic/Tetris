@@ -81,6 +81,7 @@ export class Piece {
 // -------------------------------------------------------------------------------------------
 // Funções de descer as peças ----------------------------------------------------------------
     drawPiece(boardContext){
+
         this.format.piece.forEach(
             i => {
                 i.drawBlock(boardContext);

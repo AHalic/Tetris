@@ -1,5 +1,6 @@
 import { Piece } from "./piece.js";
 import { Game } from "./game.js";
+import { loadImgs } from "./loadImgs.js";
 
 function sleep2(milliseconds) {
     const date = Date.now();
@@ -9,6 +10,7 @@ function sleep2(milliseconds) {
       currentDate = Date.now();
     } while (currentDate - date < milliseconds);
 }
+
   
 let pause = false;
 let piece, nextPiece;
@@ -26,6 +28,7 @@ document.addEventListener("keydown", async function start(event) {
         document.getElementsByClassName("grid-container")[0].style.display = "inline";
 
         // Load game
+        loadImgs();
         game = new Game();
         game.themeMusic.play();
         document.removeEventListener("keydown", start);
@@ -66,20 +69,25 @@ document.getElementById('myOptions').addEventListener('click', function () {
 // Função que adiciona o evento de ao clicar space bar recomeça o jogo 
 // (chamada apenas ao terminar o jogo)
 function restartGame() {
+    // Show game over popup
+    let modal = document.getElementById("end");
+    modal.style.display = "block";
+    console.log("Show block");
+
     document.addEventListener("keydown", function restart(event) {
         const SPACE_KEY = 32;
         const keyPressed = event.keyCode;
-        if (keyPressed == SPACE_KEY) {
+        if (keyPressed === SPACE_KEY) {
+            modal.style.display = "none"; // Hide game over modal
             game.themeMusic.pause();
             buildGame();
+
             // game = new Game();
             game.themeMusic.play();
             document.removeEventListener("keydown", restart);
             runGame();
         }
     });
-    
-    alert("Game Over. Press Space to restart.");
 }
 
 function keyEvents(event) {
@@ -155,23 +163,22 @@ function loop(nextPiece){
     } , 800);
 }
 
+
 // console.log("Printando matrix:");
 
 function buildGame() {
     game = new Game();
     game.clearBoard()
     game.clearNextBoard()
-    
+
     let type = Math.round(Math.random() * (7 - 1) +1);
     piece = new Piece(type);
     nextPiece = new Piece(type, 60);
     nextPiece.drawPiece(game.nextBoardContext);
-    // alert("cade");
 }
 
 function runGame(){
     document.addEventListener("keydown", keyEvents);
-    
     // alert("oie");
 
     let type = Math.round(Math.random() * (7 - 1) +1);
@@ -179,6 +186,7 @@ function runGame(){
     nextPiece = new Piece(type, 60);
     nextPiece.drawPiece(game.nextBoardContext);
 
+    // restartGame();
     loop(nextPiece);
 }
 

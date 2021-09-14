@@ -39,12 +39,8 @@ class Block {
 
     drawBlock(boardContext) {
         let blockImg = new Image();
-        //"imgs/blocks/redBlock.png"
         blockImg.src = Block.defineColorBlock(this.color);
         boardContext.drawImage(blockImg, this.x, this.y, 30, 30);
-        /* Se gostarem do visual de block deve-se apagar o comentário*/
-        // boardContext.fillStyle = this.color;
-        // boardContext.fillRect(this.x , this.y , 30, 30);
 
         boardContext.lineWidth = 3;
         boardContext.strokeStyle = '#17181B';
