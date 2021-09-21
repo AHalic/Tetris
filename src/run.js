@@ -12,6 +12,7 @@ function loadImgs() {
     (new Image()).src = "imgs/blocks/magentaBlock.png";
 }
 
+loadImgs();
   
 let pause = false;
 let piece, nextPiece;
@@ -165,7 +166,6 @@ function loop(nextPiece){
 }
 
 
-// console.log("Printando matrix:");
 
 function buildGame() {
     game = new Game();
@@ -191,6 +191,5 @@ function runGame(){
     loop(nextPiece);
 }
 
-loadImgs();
 buildGame();
 // runGame();
