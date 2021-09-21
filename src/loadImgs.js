@@ -1,4 +1,4 @@
-export function loadImgs() {
+function loadImgs() {
     (new Image()).src = "imgs/blocks/greenBlock.png";
     (new Image()).src = "imgs/blocks/redBlock.png";
     (new Image()).src = "imgs/blocks/blueBlock.png";
@@ -8,4 +8,6 @@ export function loadImgs() {
     (new Image()).src = "imgs/blocks/magentaBlock.png";
 }
 
-loadImgs();
+// loadImgs();
+
+// export default loadImgs;

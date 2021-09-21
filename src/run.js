@@ -1,6 +1,6 @@
 import { Piece } from "./piece.js";
 import { Game } from "./game.js";
-import { loadImgs } from "./loadImgs.js";
+// import { loadImgs } from "./loadImgs.js";
 
 function sleep2(milliseconds) {
     const date = Date.now();
@@ -21,6 +21,7 @@ document.addEventListener("keydown", async function start(event) {
     const SPACE_KEY = 32;
     const keyPressed = event.keyCode;
     if (keyPressed == SPACE_KEY) {
+        // loadImgs();
         
         // Some menu
         document.getElementsByClassName("menu")[0].style.display = "none";
@@ -28,7 +29,6 @@ document.addEventListener("keydown", async function start(event) {
         document.getElementsByClassName("grid-container")[0].style.display = "inline";
 
         // Load game
-        loadImgs();
         game = new Game();
         game.themeMusic.play();
         document.removeEventListener("keydown", start);

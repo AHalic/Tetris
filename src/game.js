@@ -2,6 +2,7 @@ import Block from "./block.js";
 
 export class Game {
     constructor(){
+        this.loadImgs();
         document.body.style.background = "#101417FF";
 
         // Canvas onde aparece o jogo
@@ -42,12 +43,7 @@ export class Game {
                 document.getElementsByClassName("sound-image")[0].style = "height: 52px; width: 52px"
             }
             sound = !sound
-            // document.getElementById("soundButton").removeEventListener("click", unmute);
-            // // Game.muteGameEvent(music, lineSound);
-            // document.getElementById("soundButton").addEventListener("click", mute(music, lineSound));
-            
-            // document.getElementById("soundButton").addEventListener("click", function unmute() {
-            // });
+
         });
         
 
@@ -59,6 +55,16 @@ export class Game {
             this.matrix[i] = Array(10).fill(0);
         }
         
+    }
+
+    loadImgs() {
+        (new Image()).src = "imgs/blocks/greenBlock.png";
+        (new Image()).src = "imgs/blocks/redBlock.png";
+        (new Image()).src = "imgs/blocks/blueBlock.png";
+        (new Image()).src = "imgs/blocks/purpleBlock.png";
+        (new Image()).src = "imgs/blocks/yellowBlock.png";
+        (new Image()).src = "imgs/blocks/orangeBlock.png";
+        (new Image()).src = "imgs/blocks/magentaBlock.png";
     }
 
 
