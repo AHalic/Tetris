@@ -2,7 +2,7 @@ import Block from "./block.js";
 
 export class Game {
     constructor(){
-        this.loadImgs();
+        // this.loadImgs();
         document.body.style.background = "#101417FF";
 
         // Canvas onde aparece o jogo
@@ -23,8 +23,7 @@ export class Game {
 
         this.audioLoad();
         let music = this.themeMusic;
-        let lineSound = this.lineSound;
-        // this.muteGameEvent();
+        let lineSound = this.lineSound;;
         
         document.getElementById("soundButton").addEventListener("click", function mute() {
             if (sound) {
@@ -57,15 +56,15 @@ export class Game {
         
     }
 
-    loadImgs() {
-        (new Image()).src = "imgs/blocks/greenBlock.png";
-        (new Image()).src = "imgs/blocks/redBlock.png";
-        (new Image()).src = "imgs/blocks/blueBlock.png";
-        (new Image()).src = "imgs/blocks/purpleBlock.png";
-        (new Image()).src = "imgs/blocks/yellowBlock.png";
-        (new Image()).src = "imgs/blocks/orangeBlock.png";
-        (new Image()).src = "imgs/blocks/magentaBlock.png";
-    }
+    // loadImgs() {
+    //     (new Image()).src = "imgs/blocks/greenBlock.png";
+    //     (new Image()).src = "imgs/blocks/redBlock.png";
+    //     (new Image()).src = "imgs/blocks/blueBlock.png";
+    //     (new Image()).src = "imgs/blocks/purpleBlock.png";
+    //     (new Image()).src = "imgs/blocks/yellowBlock.png";
+    //     (new Image()).src = "imgs/blocks/orangeBlock.png";
+    //     (new Image()).src = "imgs/blocks/magentaBlock.png";
+    // }
 
 
     clearBoard(){

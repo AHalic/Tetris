@@ -2,13 +2,14 @@ import { Piece } from "./piece.js";
 import { Game } from "./game.js";
 // import { loadImgs } from "./loadImgs.js";
 
-function sleep2(milliseconds) {
-    const date = Date.now();
-    let currentDate = null;
- 
-    do {
-      currentDate = Date.now();
-    } while (currentDate - date < milliseconds);
+function loadImgs() {
+    (new Image()).src = "imgs/blocks/greenBlock.png";
+    (new Image()).src = "imgs/blocks/redBlock.png";
+    (new Image()).src = "imgs/blocks/blueBlock.png";
+    (new Image()).src = "imgs/blocks/purpleBlock.png";
+    (new Image()).src = "imgs/blocks/yellowBlock.png";
+    (new Image()).src = "imgs/blocks/orangeBlock.png";
+    (new Image()).src = "imgs/blocks/magentaBlock.png";
 }
 
   
@@ -190,5 +191,6 @@ function runGame(){
     loop(nextPiece);
 }
 
+loadImgs();
 buildGame();
 // runGame();
