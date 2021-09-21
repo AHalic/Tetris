@@ -12,7 +12,7 @@ function loadImgs() {
     (new Image()).src = "imgs/blocks/magentaBlock.png";
 }
 
-loadImgs();
+// loadImgs();
   
 let pause = false;
 let piece, nextPiece;

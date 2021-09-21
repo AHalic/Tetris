@@ -8,6 +8,6 @@ function loadImgs() {
     (new Image()).src = "imgs/blocks/magentaBlock.png";
 }
 
-// loadImgs();
+loadImgs();
 
 // export default loadImgs;
