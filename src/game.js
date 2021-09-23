@@ -59,10 +59,10 @@ export class Game {
         if (this.nextOptions.length == 0)
             this.nextOptions = [1, 2, 3, 4, 5, 6, 7];
     
-        console.log(this.nextOptions);
+        // console.log(this.nextOptions);
         let index = Math.round(Math.random() * (this.nextOptions.length - 1) + 1) - 1;
         let newPiece = this.nextOptions.splice(index,1);
-        console.log('peça: ' + newPiece);
+        // console.log('peça: ' + newPiece);
         return Number(newPiece);
     }
 
