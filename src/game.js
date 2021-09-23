@@ -56,17 +56,6 @@ export class Game {
         
     }
 
-    // loadImgs() {
-    //     (new Image()).src = "imgs/blocks/greenBlock.png";
-    //     (new Image()).src = "imgs/blocks/redBlock.png";
-    //     (new Image()).src = "imgs/blocks/blueBlock.png";
-    //     (new Image()).src = "imgs/blocks/purpleBlock.png";
-    //     (new Image()).src = "imgs/blocks/yellowBlock.png";
-    //     (new Image()).src = "imgs/blocks/orangeBlock.png";
-    //     (new Image()).src = "imgs/blocks/magentaBlock.png";
-    // }
-
-
     clearBoard(){
         this.boardContext.fillStyle = "#1a1c21";
         this.boardContext.fillRect(0, 0, this.board.width, this.board.height);
@@ -97,31 +86,24 @@ export class Game {
 
                 switch(this.matrix[i][j]){
                     case(1):
-                        // color = '#372780'; // purple
                         color = '#6A31D1'; // purple
                         break;
                     case(2):
-                        // color = '#4f8d23'; // green
                         color = '#73BC38'; // green
                         break;
                     case(3):
-                        // color = '#e05d1a'; // orange
                         color = '#FFA704'; // orange
                         break;
                     case(4):
-                        // color = '#2c5499'; // blue
                         color = '#07ACD5'; // blue
                         break;
                     case(5):
-                        // color = '#e8c917'; // yellow
                         color = '#FFE02C'; // yellow
                         break;
                     case(6):
-                        // color = '#b9231f'; // red
                         color = '#E92F3A'; // red
                         break;
                     case(7):
-                        // color = '#ed4974'; // magenta
                         color = '#E75FAD'; // magenta
                         break;
                 }
