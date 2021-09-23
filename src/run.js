@@ -79,7 +79,7 @@ function restartGame() {
 
     // console.log("Show block");
 
-    document.addEventListener("keydown", function restart(event) {
+    document.addEventListener("keydown", async function restart(event) {
         const SPACE_KEY = 32;
         const keyPressed = event.keyCode;
         if (keyPressed === SPACE_KEY) {
@@ -91,6 +91,8 @@ function restartGame() {
             // game = new Game();
             game.themeMusic.play();
             document.removeEventListener("keydown", restart);
+
+            await new Promise(r => setTimeout(r, 1500));
             runGame();
         }
     });
