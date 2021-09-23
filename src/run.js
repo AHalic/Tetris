@@ -31,7 +31,7 @@ document.addEventListener("keydown", async function start(event) {
         document.getElementsByClassName("grid-container")[0].style.display = "inline";
 
         // Load game
-        game = new Game();
+        //game = new Game();
         game.themeMusic.play();
         document.removeEventListener("keydown", start);
         
@@ -157,7 +157,8 @@ function loop(nextPiece){
                 game.checkLine();
                 piece = new Piece(nextPiece.getType());
                 
-                let type = Math.round(Math.random() * (7 - 1) +1);
+                //let type = Math.round(Math.random() * (7 - 1) +1);
+                let type = game.defineNext();
                 nextPiece = new Piece(type, 60);
                 
                 game.clearNextBoard();
@@ -178,7 +179,8 @@ function buildGame() {
     game.clearBoard()
     game.clearNextBoard()
 
-    let type = Math.round(Math.random() * (7 - 1) +1);
+    //let type = Math.round(Math.random() * (7 - 1) +1);
+    let type = game.defineNext();
     piece = new Piece(type);
     nextPiece = new Piece(type, 60);
     nextPiece.drawPiece(game.nextBoardContext);
@@ -188,7 +190,8 @@ function runGame(){
     document.addEventListener("keydown", keyEvents);
     // alert("oie");
 
-    let type = Math.round(Math.random() * (7 - 1) +1);
+    //let type = Math.round(Math.random() * (7 - 1) +1);
+    let type = game.defineNext();
     game.clearNextBoard()
     nextPiece = new Piece(type, 60);
     nextPiece.drawPiece(game.nextBoardContext);
