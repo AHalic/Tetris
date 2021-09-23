@@ -27,7 +27,6 @@ export class Game {
         
         document.getElementById("soundButton").addEventListener("click", function mute() {
             if (sound) {
-                console.log("no prim");
                 music.muted = true;
                 lineSound.muted = true;
                 document.getElementsByClassName("sound-image")[0].src = "imgs/mute.png";
@@ -35,7 +34,6 @@ export class Game {
             }
             
             else {
-                console.log("no seg");
                 music.muted = false;
                 lineSound.muted = false;
                 document.getElementsByClassName("sound-image")[0].src = "imgs/sound.png";
@@ -63,7 +61,6 @@ export class Game {
     }
 
     clearNextBoard(){
-        // this.nextBoardContext.fillStyle = "#101417FF";
         this.nextBoardContext.fillStyle = "#141313";
         this.nextBoardContext.lineWidth = 10;
         this.nextBoardContext.strokeStyle = "DimGray";
@@ -74,9 +71,7 @@ export class Game {
     }
 
     drawMatrix(){
-
         this.clearBoard();
-
         let x, y, color;
 
         for(let i=0; i<this.matrix.length; i++){
@@ -136,7 +131,6 @@ export class Game {
                 
                 let cont = 0;
                 for(let j = 0; j < 10; j++){
-                    // console.log("novo " + newLine + " antes " + old + " e o j " + j);
                     this.matrix[old][j] = this.matrix[newLine][j];
                     if(this.matrix[newLine][j] == 0)
                         cont++;
@@ -162,7 +156,6 @@ export class Game {
                 }
             }
             
-            // console.log(cont);
             // Se a linha está toda vazia então não precisa verificar mais
             if (cont == 0) {
                 break;
@@ -177,17 +170,13 @@ export class Game {
                 }
 
                 score += qtd*10;
-                // console.log(score);
                 i++;
             }
             
-            // i++;
         }
         if (score != 0) {
             this.score += score;
             document.getElementById("score").innerHTML = this.score;
-            // this.audioLine.src = "audios/mixkit-game-ball-tap-2073.mp3";
-            // this.audioLine.autoplay = true;
         }
     }
 
@@ -201,27 +190,6 @@ export class Game {
         return false;
     }
 
-    muteGameEvent() {
-        // document.getElementById("soundButton").addEventListener("click", function mute(event) {
-        //     this.themeMusic.pause();
-        //     this.lineSound.pause();
-        //     document.getElementById("soundButton").src = "imgs/mute.png";
-        //     document.getElementById("soundButton").removeEventListener("click", mute());
-        //     this.unmuteGameEvent();
-        // });
-        document.getElementById("soundButton").onclick()
-    }
-    unmuteGameEvent(music, lineSound) {
-        document.getElementById("soundButton").addEventListener("click", function unmute() {
-            music.play();
-            lineSound.play();
-            document.getElementById("soundButton").src = "imgs/4f7b7fff8862568.png";
-            document.getElementById("soundButton").removeEventListener("click", unmute);
-            // Game.muteGameEvent(music, lineSound);
-            document.getElementById("soundButton").addEventListener("click", mute(music, lineSound));
-        });
-    }
-
     audioLoad() {
         this.lineSound = new Audio("audios/mixkit-player-jumping-in-a-video-game-2043.mp3");
         this.themeMusic = new Audio("audios/themeSong.mp3");
@@ -232,6 +200,3 @@ export class Game {
         this.themeMusic.volume = 0.025;
     }
 }
-
-
-// export default Game;
