@@ -2,21 +2,44 @@
     left: 0;
     top: 0;
     width: auto;
+    /* font-size: 15px; */
     height: 100px;
-    horiz-align: center;
+    /* horizontal-align: center; */
 }
 
 #endComment{
-
+    color: #eeeeee;
+    font-family: 'Press Start 2P', cursive;
+    margin-top: 50px;
     font-size: 13px;
     top: 40%;
+    /* margin-left: 100px; */
+    text-align: center;
 }
 
+#end_game {
+    margin: auto;
+    position: absolute;
+    /* transform: translate(10% ,0%);  */
+    margin-left: 25%;
+    size: 10px;
+    margin-top: 15%;
+    width: 500px;
+    height: 400px;
+    /* width: 50%;
+    height: auto; */
+    /* height: 100px; */
+    background-color: transparent;
+}
+
+#end_image {
+    width: 500px;
+}
 
 /* The Modal (background) */
 .Pause,
 .optionsModal,
-.End{
+.End {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
     z-index: 1; /* Sit on top */

@@ -72,15 +72,19 @@ document.getElementById('myOptions').addEventListener('click', function () {
 // (chamada apenas ao terminar o jogo)
 function restartGame() {
     // Show game over popup
-    let modal = document.getElementById("end");
-    modal.style.display = "block";
-    console.log("Show block");
+    let image = document.getElementsByClassName("End")[0];
+    image.style.display = "block";
+    document.getElementById("game").style.opacity = "0.2";
+    // image.style.opacity = "0.8";
+
+    // console.log("Show block");
 
     document.addEventListener("keydown", function restart(event) {
         const SPACE_KEY = 32;
         const keyPressed = event.keyCode;
         if (keyPressed === SPACE_KEY) {
-            modal.style.display = "none"; // Hide game over modal
+            image.style.display = "none"; // Hide game over modal
+            document.getElementById("game").style.opacity = "1";
             game.themeMusic.pause();
             buildGame();
 

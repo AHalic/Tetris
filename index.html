@@ -97,7 +97,7 @@
         <h3 id="text">Press Space to Play</h3>
     </div>
 
-    <div style="align-content: center">
+    <div id="game" style="align-content: center">
         <div class="grid-container">
             <div id="marginCanva">
                 <div id="canvas-1">
@@ -214,17 +214,21 @@
                     <button class="continue">continue</button>
                 </div>
             </div>
+            
+            <!-- <div id="end_image" class="End">
+                <img id="end_game" src="imgs/game_over.png">
+                <p id="endComment">Press SPACE to restart</p>
+            </div> -->
 
             <!-- Game over mode -->
-            <div id="end" class="End">
-                <!-- Modal content -->
+            <!-- <div id="end" class="End">
                 <div class="end-content">
                     <figure>
-                        <img src="imgs/game_over.png" alt="Game Over" id="GameOver">
+                        <img src="imgs/game_over.png" alt="Game Over" style="width: 90%; height: auto;" id="GameOver">
                         <p id="endComment">Press SPACE to restart</p>
                     </figure>
                 </div>
-            </div>
+            </div> -->
 
             <div id="myOptions" class="optionsModal">
                 <!-- Modal content -->
@@ -265,6 +269,12 @@
 
         </div>
     </div>
+
+    <div id="end_game" class="End">
+        <img id="end_image" src="imgs/game_over.png">
+        <p id="endComment">Press SPACE to Restart</p>
+    </div>
+
     <script src="src/pause.js"></script>
     <script src="src/options.js"></script>
 
