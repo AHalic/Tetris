@@ -23,7 +23,7 @@ export class Game {
 
         this.audioLoad();
         let music = this.themeMusic;
-        let lineSound = this.lineSound;;
+        let lineSound = this.lineSound;
         
         document.getElementById("soundButton").addEventListener("click", function mute() {
             if (sound) {

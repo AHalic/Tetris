@@ -169,7 +169,7 @@ function loop(nextPiece){
         else {
             loop(nextPiece);
         }
-    } , 800);
+    } , 800 - 100 * (Math.floor(game.score/20)));
 }
 
 
