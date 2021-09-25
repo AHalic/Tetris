@@ -147,7 +147,7 @@ function loop(nextPiece){
             else {
                 game.checkLine();
                 game.increaseLevel();
-                console.log(game.level);
+                // console.log(game.level);
                 piece = new Piece(nextPiece.getType(), blockImages);
                 
                 //let type = Math.round(Math.random() * (7 - 1) +1);

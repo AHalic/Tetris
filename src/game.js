@@ -13,9 +13,9 @@ export class Game {
         this.nextBoard = document.getElementById("nextpiece");
         this.nextBoardContext = this.nextBoard.getContext ("2d");
 
-        this.level = 0;
+        this.level = 1;
         this.score = 0;
-        this.lines = 1;
+        this.lines = 0;
 
         let sound = true;
 
