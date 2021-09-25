@@ -1,8 +1,9 @@
-import Block from "./block.js";
-
+// Classe representando o jogo
 export class Game {
+    /**
+     * Cria o jogo
+     */
     constructor(){
-        // this.loadImgs();
         document.body.style.background = "#101417FF";
 
         // Canvas onde aparece o jogo
@@ -13,6 +14,7 @@ export class Game {
         this.nextBoard = document.getElementById("nextpiece");
         this.nextBoardContext = this.nextBoard.getContext ("2d");
 
+        // Propriedades do jogo
         this.level = 1;
         this.score = 0;
         this.lines = 0;
@@ -26,6 +28,7 @@ export class Game {
         let music = this.themeMusic;
         let lineSound = this.lineSound;
         
+        // Evento de musica do jogo
         document.getElementById("soundButton").addEventListener("click", function mute() {
             if (sound) {
                 music.muted = true;
@@ -53,26 +56,36 @@ export class Game {
             this.matrix[i] = Array(10).fill(0);
         }
         
+        // "bolsa" de opções de peças a serem sorteadas
         this.nextOptions = [1, 2, 3, 4, 5, 6, 7];
     }
 
+    /**
+     * Sorteia uma peça para ser criada no jogo
+     * @returns {number} número referente ao formato da peça
+     */
     defineNext(){
         if (this.nextOptions.length == 0)
             this.nextOptions = [1, 2, 3, 4, 5, 6, 7];
     
-        // console.log(this.nextOptions);
         let index = Math.round(Math.random() * (this.nextOptions.length - 1) + 1) - 1;
         let newPiece = this.nextOptions.splice(index,1);
-        // console.log('peça: ' + newPiece);
+
         return Number(newPiece);
     }
 
+    /**
+     * Limpa o canva do jogo
+     */
     clearBoard(){
         this.boardContext.fillStyle = "#1a1c21";
         this.boardContext.fillRect(0, 0, this.board.width, this.board.height);
         this.boardContext.strokeRect(0, 0, this.board.width, this.board.height);
     }
 
+    /**
+     * Limpa o canva da próxima peça a entrar no jogo
+     */
     clearNextBoard(){
         this.nextBoardContext.fillStyle = "#141313";
         this.nextBoardContext.lineWidth = 10;
@@ -83,6 +96,10 @@ export class Game {
         this.nextBoardContext.lineWidth = 2;
     }
 
+    /**
+     * Método que desenha as peças contidas na matriz no canva do jogo
+     * @param {BlockImages} blockImages classe contendo as imagens dos blocos
+     */
     drawMatrix(blockImages){
         this.clearBoard();
         let x, y, color;
@@ -119,9 +136,6 @@ export class Game {
                 x = j*30;
                 y = i*30;
 
-                
-                // let blockImg = new Image();
-                // blockImg.src = Block.defineColorBlock(color);
                 let blockImg = blockImages.whichImage(color);
                 this.boardContext.drawImage(blockImg, x, y, 30, 30);
 
@@ -133,6 +147,10 @@ export class Game {
         }
     }
 
+    /**
+     * Ao remover uma linha a "matriz desce"
+     * @param {int} i linha removida
+     */
     downMatrix(i){
         if (i == 0) {
             for(let j = 0; j < 10; j++){
@@ -157,6 +175,9 @@ export class Game {
         }
     }
 
+    /**
+     * Verifica as linhas da matriz e se alguma já foi preenchida
+     */
     checkLine(){
         let score = 0;
         let qtd = 0;
@@ -194,6 +215,10 @@ export class Game {
         }
     }
 
+    /**
+     * Verifica se a primeira linha da matriz possui peça
+     * @returns {bool} true se o jogo terminou, false se não
+     */
     over(){
         for(let elem of this.matrix[0]){
             if(elem != 0) {
@@ -204,6 +229,9 @@ export class Game {
         return false;
     }
 
+    /**
+     * Carrega os audios do jogo e modifica o volume
+     */
     audioLoad() {
         this.lineSound = new Audio("audios/mixkit-player-jumping-in-a-video-game-2043.mp3");
         this.themeMusic = new Audio("audios/themeSong.mp3");
@@ -214,6 +242,9 @@ export class Game {
         this.themeMusic.volume = 0.025;
     }
 
+    /**
+     * Modifica o level dependendo da pontuação no jogo
+     */
     increaseLevel() {
         if (this.score < 100) {
             this.level = 0;
