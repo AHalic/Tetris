@@ -1,9 +1,10 @@
 class Block {
-    constructor(color, x, y) {
+    constructor(color, x, y, BlockImages) {
         this.color = color;
         // posições no canva
         this.x = x;
         this.y = y;
+        this.blockImg = BlockImages.whichImage(color);
         /* Para achar a posição na matriz basta dividir por 30 */
     }
 
@@ -38,9 +39,9 @@ class Block {
     }
 
     drawBlock(boardContext) {
-        let blockImg = new Image();
-        blockImg.src = Block.defineColorBlock(this.color);
-        boardContext.drawImage(blockImg, this.x, this.y, 30, 30);
+        // let blockImg = new Image();
+        // blockImg.src = Block.defineColorBlock(this.color);
+        boardContext.drawImage(this.blockImg, this.x, this.y, 30, 30);
 
         boardContext.lineWidth = 3;
         boardContext.strokeStyle = '#17181B';

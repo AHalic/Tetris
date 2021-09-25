@@ -1,19 +1,8 @@
 import { Piece } from "./piece.js";
 import { Game } from "./game.js";
-// import { loadImgs } from "./loadImgs.js";
+import BlockImages from "./loadImgs.js";
 
-function loadImgs() {
-    (new Image()).src = "imgs/blocks/greenBlock.png";
-    (new Image()).src = "imgs/blocks/redBlock.png";
-    (new Image()).src = "imgs/blocks/blueBlock.png";
-    (new Image()).src = "imgs/blocks/purpleBlock.png";
-    (new Image()).src = "imgs/blocks/yellowBlock.png";
-    (new Image()).src = "imgs/blocks/orangeBlock.png";
-    (new Image()).src = "imgs/blocks/magentaBlock.png";
-}
-
-// loadImgs();
-  
+let blockImages = new BlockImages();  
 let pause = false;
 let piece, nextPiece;
 let game; // = new Game();
@@ -23,6 +12,7 @@ let game; // = new Game();
 document.addEventListener("keydown", async function start(event) {
     const SPACE_KEY = 32;
     const keyPressed = event.keyCode;
+
     if (keyPressed == SPACE_KEY) {
         // loadImgs();
         
@@ -110,27 +100,27 @@ function keyEvents(event) {
     if (keyPressed == DOWN_KEY) {
         // console.log("Evento entrou");
         piece.downPiece(game.matrix);
-        game.drawMatrix();
+        game.drawMatrix(blockImages);
         piece.drawPiece(game.boardContext);
     }
     else if (keyPressed == UP_KEY) {
         piece.rotate(game.matrix);
-        game.drawMatrix();
+        game.drawMatrix(blockImages);
         piece.drawPiece(game.boardContext);
     }
     else if (keyPressed == LEFT_KEY) {
         piece.leftPiece(game.matrix);
-        game.drawMatrix();
+        game.drawMatrix(blockImages);
         piece.drawPiece(game.boardContext);
     }
     else if (keyPressed == RIGHT_KEY) {
         piece.rightPiece(game.matrix);
-        game.drawMatrix();
+        game.drawMatrix(blockImages);
         piece.drawPiece(game.boardContext);
     }
     else if (keyPressed == SHIFT_KEY) {
         while (piece.downPiece(game.matrix));
-        game.drawMatrix();
+        game.drawMatrix(blockImages);
         piece.drawPiece(game.boardContext);
     }
 }
@@ -145,7 +135,7 @@ function loop(nextPiece){
         }
         
         if (!pause) {
-            game.drawMatrix();
+            game.drawMatrix(blockImages);
             piece.drawPiece(game.boardContext);
             // console.log(pause)
 
@@ -158,11 +148,11 @@ function loop(nextPiece){
                 game.checkLine();
                 game.increaseLevel();
                 console.log(game.level);
-                piece = new Piece(nextPiece.getType());
+                piece = new Piece(nextPiece.getType(), blockImages);
                 
                 //let type = Math.round(Math.random() * (7 - 1) +1);
                 let type = game.defineNext();
-                nextPiece = new Piece(type, 60);
+                nextPiece = new Piece(type, blockImages, 60);
                 
                 game.clearNextBoard();
                 nextPiece.drawPiece(game.nextBoardContext);
@@ -177,15 +167,16 @@ function loop(nextPiece){
 // 100 * (Math.floor(game.score/20)))
 
 
-function buildGame() {
+async function buildGame() { 
     game = new Game();
     game.clearBoard()
     game.clearNextBoard()
 
     //let type = Math.round(Math.random() * (7 - 1) +1);
+    await new Promise(r => setTimeout(r, 1000));
     let type = game.defineNext();
-    piece = new Piece(type);
-    nextPiece = new Piece(type, 60);
+    piece = new Piece(type, blockImages);
+    nextPiece = new Piece(type, blockImages, 60);
     nextPiece.drawPiece(game.nextBoardContext);
 }
 
@@ -196,7 +187,7 @@ function runGame(){
     //let type = Math.round(Math.random() * (7 - 1) +1);
     let type = game.defineNext();
     game.clearNextBoard()
-    nextPiece = new Piece(type, 60);
+    nextPiece = new Piece(type, blockImages, 60);
     nextPiece.drawPiece(game.nextBoardContext);
 
     // restartGame();

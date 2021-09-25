@@ -2,31 +2,31 @@ import { Format1, Format2, Format3, Format4, Format5, Format6, Format7} from './
 
 
 export class Piece {
-    constructor(formatValue, x=0) {
+    constructor(formatValue, blockImages, x=0) {
         this.type = formatValue;
         this.rotation = 0;
 
         switch (formatValue) {
             case 1:
-                this.format = new Format1(x);
+                this.format = new Format1(x, blockImages);
                 break;
             case 2:
-                this.format = new Format2(x);
+                this.format = new Format2(x, blockImages);
                 break;
             case 3:
-                this.format = new Format3(x);
+                this.format = new Format3(x, blockImages);
                 break;
             case 4:
-                this.format = new Format4(x);
+                this.format = new Format4(x, blockImages);
                 break;
             case 5:
-                this.format = new Format5(x);
+                this.format = new Format5(x, blockImages);
                 break;
             case 6:
-                this.format = new Format6(x);
+                this.format = new Format6(x, blockImages);
                 break;
             case 7:
-                this.format = new Format7(x);
+                this.format = new Format7(x, blockImages);
                 break;
             default:
                 break;

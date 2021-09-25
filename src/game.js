@@ -83,7 +83,7 @@ export class Game {
         this.nextBoardContext.lineWidth = 2;
     }
 
-    drawMatrix(){
+    drawMatrix(blockImages){
         this.clearBoard();
         let x, y, color;
 
@@ -119,9 +119,10 @@ export class Game {
                 x = j*30;
                 y = i*30;
 
-
-                let blockImg = new Image();
-                blockImg.src = Block.defineColorBlock(color);
+                
+                // let blockImg = new Image();
+                // blockImg.src = Block.defineColorBlock(color);
+                let blockImg = blockImages.whichImage(color);
                 this.boardContext.drawImage(blockImg, x, y, 30, 30);
 
                 this.boardContext.lineWidth = 3;
