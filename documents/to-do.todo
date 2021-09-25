@@ -5,13 +5,13 @@ Falta fazer
 
     ✔ fazer menu de inicio (press space e começa) @done(21-09-06 02:34)
     ✔ botão de pausa @done(21-09-06 02:34)
-    ☐ fim do jogo e press space pra recomeçar (??)
+    ✔ fim do jogo e press space pra recomeçar (??) @done(21-09-25 14:58)
     ☐ musica
         ✔ fundo @done(21-09-06 02:34)
         ✔ linha completa @done(21-09-06 02:35)
         ☐ fim do jogo
-    ☐ algoritmo de random (se n recebe uma faz tempo dar ela)
-    ☐ level?  (tempo de clock diminuir por level)
+    ✔ algoritmo de random (se n recebe uma faz tempo dar ela) @done(21-09-25 14:23)
+    ✔ level?  (tempo de clock diminuir por level) @done(21-09-25 14:24)
     ✔ tecla q vai o max pra baixo q da (hard drop-space) @done(21-09-06 13:39)
     ☐ peça laranja zoada (clicando na hora q chega no fim ela duplica)
         (verificar)
