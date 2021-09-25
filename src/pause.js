@@ -1,27 +1,18 @@
-// Get the modal
+// Pega o modal de pausa
 let modal = document.getElementById("myPause");
 
-// Get the button that opens the modal
+// Pega o botão que abre esse modal
 let btn = document.getElementById("pause_button");
 
-// Get the <span> element that closes the modal
+// Pega o botão que fecha esse modal
 let span = document.getElementsByClassName("continue")[0];
 
-// When the user clicks the button, open the modal
+// Ao clicar no botão abre o modal
 btn.onclick = function() {
     modal.style.display = "block";
 }
 
-// When the user clicks on continue, close the modal
+// Ao clicar no botão de continue fecha o modal
 span.onclick = function() {
     modal.style.display = "none";
 }
-
-// When the user clicks anywhere outside of the modal, close it
-// window.onclick = function(event) {
-//     console.log("entrei aq");
-//     if (event.target == modal) {
-//         console.log("e tb aq");
-//         modal.style.display = "none";
-//     }
-// }
