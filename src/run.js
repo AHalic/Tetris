@@ -1,56 +1,59 @@
+// Importando classes necessárias
 import { Piece } from "./piece.js";
 import { Game } from "./game.js";
 import BlockImages from "./loadImgs.js";
 
+// Variáveis globais importantes para o jogo
 let blockImages = new BlockImages();  
 let pause = false;
 let piece, nextPiece;
-let game; // = new Game();
-// let level = 0;
+let game; 
 
-// Inicia o jogo (só acontece uma vez)
+// Evento de inicio do jogo (só acontece uma vez)
 document.addEventListener("keydown", async function start(event) {
     const SPACE_KEY = 32;
     const keyPressed = event.keyCode;
 
     if (keyPressed == SPACE_KEY) {
-        // loadImgs();
-        
         // Some menu
         document.getElementsByClassName("menu")[0].style.display = "none";
         // Aparece jogo
         document.getElementsByClassName("grid-container")[0].style.display = "inline";
 
-        // Load game
-        //game = new Game();
+        // Começa a tocar a musica do jogo
         game.themeMusic.play();
+        // Remove este evento
         document.removeEventListener("keydown", start);
         
-        
-        // Delay
+        // Delay de início do jogo 
         await new Promise(r => setTimeout(r, 1500));
         runGame();
     }
 });
 
 
-// Eventos de pausar o jogo
+// Evento de pausar o jogo ao clicar no botão de pause
 document.getElementById('pause_button').addEventListener('click', function () {
     pause = true
     document.removeEventListener("keydown", keyEvents);
 })
 
+
+// Evento de pausar o jogo ao clicar no botão options
 document.getElementById('options_button').addEventListener('click', function () {
     pause = true;
     document.removeEventListener("keydown", keyEvents);
 })
 
+
+// Eventos de despausar o jogo
 document.getElementById('myPause').addEventListener('click', function () {
     if (document.getElementById('myPause').style.display == "none") {
         pause = false;
         document.addEventListener("keydown", keyEvents);
     }
 })
+
 
 document.getElementById('myOptions').addEventListener('click', function () {
     if (document.getElementById('myOptions').style.display == "none") {
@@ -59,36 +62,38 @@ document.getElementById('myOptions').addEventListener('click', function () {
     }
 })
 
+
 // Função que adiciona o evento de ao clicar space bar recomeça o jogo 
 // (chamada apenas ao terminar o jogo)
 function restartGame() {
-    // Show game over popup
+    // Mostra a imagem de game over e deixa fundo opaco
     let image = document.getElementsByClassName("End")[0];
     image.style.display = "block";
     document.getElementById("game").style.opacity = "0.2";
-    // image.style.opacity = "0.8";
 
-    // console.log("Show block");
 
     document.addEventListener("keydown", async function restart(event) {
         const SPACE_KEY = 32;
         const keyPressed = event.keyCode;
         if (keyPressed === SPACE_KEY) {
-            image.style.display = "none"; // Hide game over modal
+            // Esconde a imagem e reinicia o jogo
+            image.style.display = "none";
             document.getElementById("game").style.opacity = "1";
             game.themeMusic.pause();
             buildGame();
 
-            // game = new Game();
             game.themeMusic.play();
             document.removeEventListener("keydown", restart);
 
+            // Delay para início do jogo
             await new Promise(r => setTimeout(r, 1500));
             runGame();
         }
     });
 }
 
+
+// Função de eventos do jogo para movimentação da peça
 function keyEvents(event) {
     const LEFT_KEY = 37;
     const RIGHT_KEY = 39;
@@ -98,7 +103,6 @@ function keyEvents(event) {
     const keyPressed = event.keyCode;
 
     if (keyPressed == DOWN_KEY) {
-        // console.log("Evento entrou");
         piece.downPiece(game.matrix);
         game.drawMatrix(blockImages);
         piece.drawPiece(game.boardContext);
@@ -126,8 +130,9 @@ function keyEvents(event) {
 }
 
 
+//  Função do loop principal do jogo
 function loop(nextPiece){
-    // alert("veio");
+
     setTimeout( function onTick() {
         if (game.over()){
             restartGame();
@@ -141,16 +146,15 @@ function loop(nextPiece){
 
             let flag = piece.downPiece(game.matrix);
             
+            // Se a peça ainda puder descer entra no loop de novo
             if(flag) {
                 loop(nextPiece);
             }
             else {
                 game.checkLine();
                 game.increaseLevel();
-                // console.log(game.level);
                 piece = new Piece(nextPiece.getType(), blockImages);
                 
-                //let type = Math.round(Math.random() * (7 - 1) +1);
                 let type = game.defineNext();
                 nextPiece = new Piece(type, blockImages, 60);
                 
@@ -164,15 +168,15 @@ function loop(nextPiece){
         }
     } , 1000 - 100*game.level);
 }
-// 100 * (Math.floor(game.score/20)))
 
 
+// Função que monta o jogo e inicializa as classes utilizadas
 async function buildGame() { 
     game = new Game();
     game.clearBoard()
     game.clearNextBoard()
 
-    //let type = Math.round(Math.random() * (7 - 1) +1);
+    // Delay para carregar as imagens
     await new Promise(r => setTimeout(r, 1000));
     let type = game.defineNext();
     piece = new Piece(type, blockImages);
@@ -180,19 +184,18 @@ async function buildGame() {
     nextPiece.drawPiece(game.nextBoardContext);
 }
 
+
+// Função que adiciona os eventos e inicia o jogo
 function runGame(){
     document.addEventListener("keydown", keyEvents);
-    // alert("oie");
 
-    //let type = Math.round(Math.random() * (7 - 1) +1);
     let type = game.defineNext();
     game.clearNextBoard()
     nextPiece = new Piece(type, blockImages, 60);
     nextPiece.drawPiece(game.nextBoardContext);
 
-    // restartGame();
     loop(nextPiece);
 }
 
+
 buildGame();
-// runGame();
