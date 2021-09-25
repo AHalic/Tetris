@@ -3,30 +3,22 @@
 <head>
     <meta charset ="utf-8"/>
     <title> Tetris Game </title>
-    <!-- Include the style for tetris in another file    -->
+ 
+    <!-- Inclui ícone da página -->
     <link rel="icon" href="imgs/icon.svg">
 
-    <!-- <link rel="apple-touch-icon" href="imgs/icon.svg"> -->
-    <!-- <link rel="apple-touch-icon" sizes="76x76" href="touch-icon-ipad.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="touch-icon-iphone-retina.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="touch-icon-ipad-retina.png"> -->
-
+    <!-- Inclui arquivos css de estilização -->
     <link rel="stylesheet" href="style/tetris-style.css">
     <link rel="stylesheet" href="style/widgets.css">
     <link rel="stylesheet" href="style/menu.css">
-    <!--    Include the pixel font-->
-    <!-- <link href="http://fonts.cdnfonts.com/css/gau-font-cube" rel="stylesheet"> -->
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
-
-
 </head>
 
 <body>
+    <!-- Inclui o module js do jogo -->
     <script type="module" src ="src/run.js"> </script>
-    <!-- TODO botão easteregg -->
-    <!-- <button id="easter-egg">click to WIN</button> -->
-    <!-- <script src="src/loadImgs.js"></script>     -->
     
+
+    <!-- Código svg do menu de início do jogo -->
     <div class="menu">
         <svg class="menuLogo" width="1000" height="500" viewBox="0 0 1000 500" fill="none" xmlns="http://www.w3.org/2000/svg">
             <g id="Frame 1">
@@ -98,16 +90,19 @@
         <h3 id="text">Press Space to Play</h3>
     </div>
 
+    <!-- Div contendo o jogo -->
     <div id="game" style="align-content: center">
         <div class="grid-container">
             <div id="marginCanva">
+
+                <!-- Canvas principal, onde o jogo ocorre -->
                 <div id="canvas-1">
                     <canvas id="tetrisboard" width ="300 " height ="540"> </canvas>
                 </div>
             
                 <div class="container">
                         
-                    <!-- This gone be ugly, the svg file -->
+                    <!-- Código svg da logo dentro do jogo -->
                     <svg class="jumpingLogo" style="right: -270px;" id="title" width="794" height="1000" viewBox="0 0 794 1000" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <g id="Frame 1">
                             <g id="LetterT2">
@@ -177,18 +172,23 @@
                             </g>
                         </g>
                     </svg>
-                    <!-- Sorry for this  -->
+
                     
                     <div id="square">
+
+                        <!-- Div onde é mostrada a pontuação do jogador -->
                         <div id="container-score"> 
                             <h3 style="font-size: 15px; margin-top: 23px; font-family: 'Press Start 2P', cursive;" > Score </h3>
                             <div id="score"> </div>
                         </div>
+
+                        <!-- Div onde é mostrada a quantidade de linhas feitas -->
                         <div id="container-lines">  
                             <h3 style="font-size: 15px; margin-top: 23px; font-family: 'Press Start 2P', cursive;"> Lines </h3>
                             <div id="lines"> </div>
                         </div>
                         
+                        <!-- Div contendo os botões de funcionalidades -->
                         <div class="container-buttons">
                             <button id="pause_button">Pause</button>
                             <button id="options_button">Options</button>
@@ -197,7 +197,7 @@
                     </div>
                 
 
-
+                    <!-- Canvas onde é mostrada a próxima peça -->
                     <div id="canvas-2">
                         <canvas id="nextpiece" width ="240" height ="180"> </canvas>
                     </div>
@@ -206,38 +206,29 @@
 
             </div>
 
-            <!-- Pause mode -->
+            <!-- Div para pausar o jogo -->
             <div id="myPause" class="Pause">
 
                 <!-- Modal content -->
                 <div class="pause-content">
                     <p style="font-size: 17px;">Game paused</p>
+
+                    <!-- Botão para fechar o modal -->
                     <button class="continue">continue</button>
                 </div>
             </div>
-            
-            <!-- <div id="end_image" class="End">
-                <img id="end_game" src="imgs/game_over.png">
-                <p id="endComment">Press SPACE to restart</p>
-            </div> -->
 
-            <!-- Game over mode -->
-            <!-- <div id="end" class="End">
-                <div class="end-content">
-                    <figure>
-                        <img src="imgs/game_over.png" alt="Game Over" style="width: 90%; height: auto;" id="GameOver">
-                        <p id="endComment">Press SPACE to restart</p>
-                    </figure>
-                </div>
-            </div> -->
 
+            <!-- Div contendo opções de jogo -->
             <div id="myOptions" class="optionsModal">
                 <!-- Modal content -->
                 
                 <div class="options-content">
-                    <!-- <button class="btn x-button"><i class="fa fa-lg fa-times"></i></button> -->
+                    <!-- Botão para fechar o modal -->
                     <button class="btn x-button" style="color: white; font-size: 15px;">x</button>
                     <p style="font-size: 20px;">Options</p>
+
+                    <!-- Tabela com comandos do jogo -->
                     <table class="optionsTable">
                         <tr>
                             <td class="tg-0pky">Rotate Piece</td>
@@ -261,10 +252,10 @@
                         </tr>
                     </table>
 
+                    <!-- Botão de som de jogo -->
                     <button id="soundButton" class="btn" type="image">
                         <img class="sound-image" src="imgs/sound.png"></img>
                     </button>
-                    <!-- <input id="muteButton" type="image" src="imgs/mute.png"></input> -->
                 </div>
             </div>
 
@@ -272,16 +263,16 @@
         </div>
     </div>
 
+
+    <!-- Div contendo a imagem de fim de jogo e texto -->
     <div id="end_game" class="End">
         <img id="end_image" src="imgs/game_over.png">
         <p id="endComment">Press SPACE to Restart</p>
     </div>
 
+
     <script src="src/pause.js"></script>
     <script src="src/options.js"></script>
-
-
-    <!-- <object data="imgs/tetris.svg" type="image/svg+xml"></object> -->
 </body>
 <!-- <script type="module" src ="src/run.js"> </script> -->
 
