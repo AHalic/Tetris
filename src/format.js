@@ -1,14 +1,29 @@
 import Block from './block.js';
 
-//  _   <- Roxo  
-// ---  
+/**
+ * Classe representação do formato 1 (roxo)
+ */
 export class Format1{
+    //   _   (aparencia da peça)
+    //  ---  
+
+    /**
+     * Constrói o formato
+     * @param {number} x posição no canva
+     * @param {BlockImages} blockImages classe contendo as imagens dos blocos
+     */
     constructor(x=0, blockImages){
-        // this.piece =  Array(new Block('#372780', 90-x/2, x), new Block('#372780', 120-x/2, x), new Block('#372780', 120-x/2, x+30), new Block('#372780', 150-x/2, x));
-        this.piece =  Array(new Block('#6A31D1', 90-x/2, x, blockImages), new Block('#6A31D1', 120-x/2, x, blockImages), new Block('#6A31D1', 120-x/2, x+30, blockImages), new Block('#6A31D1', 150-x/2, x, blockImages));
-                                // "#6A31BB" "#6A31D1" "#7344D1"
+        this.piece =  Array(new Block('#6A31D1', 90-x/2, x, blockImages), 
+                            new Block('#6A31D1', 120-x/2, x, blockImages), 
+                            new Block('#6A31D1', 120-x/2, x+30, blockImages), 
+                            new Block('#6A31D1', 150-x/2, x, blockImages));
     }
 
+    /**
+     * Rotaciona o formato
+     * @param {number} rotation tipo da rotação
+     * @returns {Array} novas posições do formato
+    */
     rotate(rotation){
         let newPosition;
         switch (rotation) {
@@ -52,14 +67,29 @@ export class Format1{
     }
 }
 
-// Verde -> --__ 
+/**
+ * Classe representação do formato 2 (verde)
+ */
 export class Format2{
+    // --__  (aparencia da peça)
+
+    /**
+     * Constrói o formato
+     * @param {number} x posição no canva
+     * @param {BlockImages} blockImages classe contendo as imagens dos blocos
+     */
     constructor(x=0, blockImages){
-        // this.piece =  Array(new Block('#4f8d23', 90-x/2, x), new Block('#4f8d23', 120-x/2, x), new Block('#4f8d23', 120-x/2, x+30), new Block('#4f8d23', 150-x/2, x+30));
-        // this.piece =  Array(new Block('#93C938', 90-x/2, x), new Block('#93C938', 120-x/2, x), new Block('#93C938', 120-x/2, x+30), new Block('#93C938', 150-x/2, x+30));
-        this.piece =  Array(new Block('#73BC38', 90-x/2, x, blockImages), new Block('#73BC38', 120-x/2, x, blockImages), new Block('#73BC38', 120-x/2, x+30, blockImages), new Block('#73BC38', 150-x/2, x+30, blockImages));
+        this.piece =  Array(new Block('#73BC38', 90-x/2, x, blockImages), 
+                            new Block('#73BC38', 120-x/2, x, blockImages), 
+                            new Block('#73BC38', 120-x/2, x+30, blockImages), 
+                            new Block('#73BC38', 150-x/2, x+30, blockImages));
     }
     
+    /**
+     * Rotaciona o formato
+     * @param {number} rotation tipo da rotação
+     * @returns {Array} novas posições do formato
+    */
     rotate(rotation){
         let newPosition;
         switch (rotation) {
@@ -87,17 +117,31 @@ export class Format2{
 
         return newPosition;
     }
-
 }   
 
-// Laranja -> ----
+/**
+ * Classe representação do formato 3 (laranja)
+ */
 export class Format3{
+    // ---- (aparencia da peça)
+
+    /**
+     * Constrói o formato
+     * @param {number} x posição no canva
+     * @param {BlockImages} blockImages classe contendo as imagens dos blocos
+    */
     constructor(x=0, blockImages){
-        // this.piece =  Array(new Block('#e05d1a', 90-x/2, x), new Block('#e05d1a', 120-x/2, x), new Block('#e05d1a', 150-x/2, x), new Block('#e05d1a', 180-x/2, x));
-        this.piece =  Array(new Block('#FFA704', 90-x/2, x, blockImages), new Block('#FFA704', 120-x/2, x, blockImages), new Block('#FFA704', 150-x/2, x, blockImages), new Block('#FFA704', 180-x/2, x, blockImages));
-                                // "#FFE02C"
+        this.piece =  Array(new Block('#FFA704', 90-x/2, x, blockImages), 
+                            new Block('#FFA704', 120-x/2, x, blockImages), 
+                            new Block('#FFA704', 150-x/2, x, blockImages), 
+                            new Block('#FFA704', 180-x/2, x, blockImages));
     }
     
+    /**
+     * Rotaciona o formato
+     * @param {number} rotation tipo da rotação
+     * @returns {Array} novas posições do formato
+    */    
     rotate(rotation){ 
         let newPosition;
         switch(rotation){
@@ -127,15 +171,30 @@ export class Format3{
     }
 }
 
-// _    <- Azul
-// ---  
+/**
+ * Classe representação do formato 4 (azul)
+ */
 export class Format4{
+    // _    (aparencia da peça)
+    // ---  
+
+    /**
+     * Constrói o formato
+     * @param {number} x posição no canva
+     * @param {BlockImages} blockImages classe contendo as imagens dos blocos
+    */    
     constructor(x=0, blockImages){
-        // this.piece =  Array(new Block('#2c5499', 90-x/2, x), new Block('#2c5499', 90-x/2, x+30), new Block('#2c5499', 120-x/2, x), new Block('#2c5499', 150-x/2, x));
-        this.piece =  Array(new Block('#07ACD5', 90-x/2, x, blockImages), new Block('#07ACD5', 90-x/2, x+30, blockImages), new Block('#07ACD5', 120-x/2, x, blockImages), new Block('#07ACD5', 150-x/2, x, blockImages));
-                                // "#07ACE3" "#19ACC4" "#07ACD5"
+        this.piece =  Array(new Block('#07ACD5', 90-x/2, x, blockImages), 
+                            new Block('#07ACD5', 90-x/2, x+30, blockImages), 
+                            new Block('#07ACD5', 120-x/2, x, blockImages), 
+                            new Block('#07ACD5', 150-x/2, x, blockImages));
     }
 
+    /**
+     * Rotaciona o formato
+     * @param {number} rotation tipo da rotação
+     * @returns {Array} novas posições do formato
+    */
     rotate(rotation){
         let newPosition;
         switch (rotation) {
@@ -179,14 +238,31 @@ export class Format4{
     }
 }
 
-//   _   <- Amarelo
-// ---
+/**
+ * Classe representação do formato 5 (amarelo)
+ */
 export class Format5{
-    constructor(x=0, blockImages){
-        // this.piece =  Array(new Block('#e8c917', 90-x/2, x), new Block('#e8c917', 120-x/2, x), new Block('#e8c917', 150-x/2, x), new Block('#e8c917', 150-x/2, x+30));
-        this.piece =  Array(new Block('#FFE02C', 90-x/2, x, blockImages), new Block('#FFE02C', 120-x/2, x, blockImages), new Block('#FFE02C', 150-x/2, x, blockImages), new Block('#FFE02C', 150-x/2, x+30, blockImages));
-    }
+    //   _   (aparencia da peça)
+    // ---
     
+    
+    /**
+     * Constrói o formato
+     * @param {number} x posição no canva
+     * @param {BlockImages} blockImages classe contendo as imagens dos blocos
+    */   
+    constructor(x=0, blockImages){
+        this.piece =  Array(new Block('#FFE02C', 90-x/2, x, blockImages), 
+                            new Block('#FFE02C', 120-x/2, x, blockImages), 
+                            new Block('#FFE02C', 150-x/2, x, blockImages), 
+                            new Block('#FFE02C', 150-x/2, x+30, blockImages));
+    }
+
+    /**
+     * Rotaciona o formato
+     * @param {number} rotation tipo da rotação
+     * @returns {Array} novas posições do formato
+    */
     rotate(rotation){
         let newPosition;
         switch (rotation) {
@@ -230,15 +306,29 @@ export class Format5{
     }
 }
 
-// Vermelha -> __--
+/**
+ * Classe representação do formato 6 (veremelho)
+ */
 export class Format6{
+    //  __--  (aparencida da peça)
+
+    /**
+     * Constrói o formato
+     * @param {number} x posição no canva
+     * @param {BlockImages} blockImages classe contendo as imagens dos blocos
+    */ 
     constructor(x=0, blockImages){
-        // this.piece =  Array(new Block('#b9231f', 90-x/2, x+30), new Block('#b9231f', 120-x/2, x+30), new Block('#b9231f', 120-x/2, x), new Block('#b9231f', 150-x/2, x));
-        // this.piece =  Array(new Block('#ff0000', 90-x/2, x+30), new Block('#ff0000', 120-x/2, x+30), new Block('#ff0000', 120-x/2, x), new Block('#ff0000', 150-x/2, x));
-        this.piece =  Array(new Block('#E92F3A', 90-x/2, x+30, blockImages), new Block('#E92F3A', 120-x/2, x+30, blockImages), new Block('#E92F3A', 120-x/2, x, blockImages), new Block('#E92F3A', 150-x/2, x, blockImages));
-                                    // "#E92F3A" "#DF2F3A" "#E8413A"
+        this.piece =  Array(new Block('#E92F3A', 90-x/2, x+30, blockImages), 
+                            new Block('#E92F3A', 120-x/2, x+30, blockImages), 
+                            new Block('#E92F3A', 120-x/2, x, blockImages), 
+                            new Block('#E92F3A', 150-x/2, x, blockImages));
     }
     
+    /**
+     * Rotaciona o formato
+     * @param {number} rotation tipo da rotação
+     * @returns {Array} novas posições do formato
+    */
     rotate(rotation){
         let newPosition;
         switch (rotation) {
@@ -268,14 +358,29 @@ export class Format6{
     }
 }
 
-// [] <- rosa
+/**
+ * Classe representação do formato 7 (rosa)
+ */
 export class Format7{
+    // [] (aparencia da peça)
+
+    /**
+     * Constrói o formato
+     * @param {number} x posição no canva
+     * @param {BlockImages} blockImages classe contendo as imagens dos blocos
+    */ 
     constructor(x=0, blockImages){
-        // this.piece =  Array(new Block('#ed4974', 120-x/2, x), new Block('#ed4974', 120-x/2, x+30), new Block('#ed4974', 150-x/2, x), new Block('#ed4974', 150-x/2, x+30));
-        this.piece =  Array(new Block('#E75FAD', 120-x/2, x, blockImages), new Block('#E75FAD', 120-x/2, x+30, blockImages), new Block('#E75FAD', 150-x/2, x, blockImages), new Block('#E75FAD', 150-x/2, x+30, blockImages));
-                                // "#E75F94" "#E75FAD" "#FF2444"
+        this.piece =  Array(new Block('#E75FAD', 120-x/2, x, blockImages), 
+                            new Block('#E75FAD', 120-x/2, x+30, blockImages), 
+                            new Block('#E75FAD', 150-x/2, x, blockImages), 
+                            new Block('#E75FAD', 150-x/2, x+30, blockImages));
     }
 
+    /**
+     * Rotaciona o formato
+     * @param {number} rotation tipo da rotação
+     * @returns {Array} novas posições do formato
+    */
     rotate(){
         return Array(
             [this.piece[0].x, this.piece[0].y],
