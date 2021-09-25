@@ -207,10 +207,13 @@ export class Game {
     audioLoad() {
         this.lineSound = new Audio("audios/mixkit-player-jumping-in-a-video-game-2043.mp3");
         this.themeMusic = new Audio("audios/themeSong.mp3");
+        this.endAudio = new Audio("audios/gameOver.mp3");
         this.lineSound.load();
         this.themeMusic.load();
+        this.endAudio.load();
         this.themeMusic.loop = true;
         this.lineSound.volume = 0.1;
+        this.endAudio.volume = 0.1;
         this.themeMusic.volume = 0.025;
     }
 

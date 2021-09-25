@@ -130,6 +130,8 @@ function loop(nextPiece){
     // alert("veio");
     setTimeout( function onTick() {
         if (game.over()){
+            game.themeMusic.muted = true;
+            game.endAudio.play();
             restartGame();
             return;
         }
