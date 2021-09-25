@@ -13,8 +13,9 @@ export class Game {
         this.nextBoard = document.getElementById("nextpiece");
         this.nextBoardContext = this.nextBoard.getContext ("2d");
 
+        this.level = 0;
         this.score = 0;
-        this.lines = 0;
+        this.lines = 1;
 
         let sound = true;
 
@@ -210,5 +211,35 @@ export class Game {
         this.themeMusic.loop = true;
         this.lineSound.volume = 0.1;
         this.themeMusic.volume = 0.025;
+    }
+
+    increaseLevel() {
+        if (this.score < 100) {
+            this.level = 0;
+        }
+        else if (this.score < 300) {
+            this.level = 1;
+        }
+        else if (this.score < 500) {
+            this.level = 2; 
+        }
+        else if (this.score < 800) {
+            this.level = 3;
+        }
+        else if (this.score < 1100) {
+            this.level = 4;
+        }
+        else if (this.score < 1400) {
+            this.level = 5;
+        }
+        else if (this.score < 1700) {
+            this.level = 6;
+        }
+        else if (this.score < 2000) {
+            this.level = 7;
+        }
+        else {
+            this.level = 8;
+        }
     }
 }

@@ -17,6 +17,7 @@ function loadImgs() {
 let pause = false;
 let piece, nextPiece;
 let game; // = new Game();
+// let level = 0;
 
 // Inicia o jogo (só acontece uma vez)
 document.addEventListener("keydown", async function start(event) {
@@ -155,6 +156,8 @@ function loop(nextPiece){
             }
             else {
                 game.checkLine();
+                game.increaseLevel();
+                console.log(game.level);
                 piece = new Piece(nextPiece.getType());
                 
                 //let type = Math.round(Math.random() * (7 - 1) +1);
@@ -169,9 +172,9 @@ function loop(nextPiece){
         else {
             loop(nextPiece);
         }
-    } , 800 - 100 * (Math.floor(game.score/20)));
+    } , 1000 - 100*game.level);
 }
-
+// 100 * (Math.floor(game.score/20)))
 
 
 function buildGame() {
