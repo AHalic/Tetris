@@ -1,4 +1,11 @@
+/**
+ * Classe contendo as imagens dos blocos
+ */
 export default class BlockImages {
+
+    /**
+     * Constrói a classe carregando cada imagem
+     */
     constructor() {
         this.green = new Image();
         this.green.src = "imgs/blocks/greenBlock.png";
@@ -22,6 +29,11 @@ export default class BlockImages {
         this.magenta.src = "imgs/blocks/magentaBlock.png";
     }
 
+    /**
+     * Escolhe qual imagem será usada
+     * @param {string} hexColor hexadecimal referente a cor da peça
+     * @returns {Image} imagem do blos
+     */
     whichImage(hexColor){
         switch (hexColor) {
             case '#6A31D1': return this.purple;
@@ -39,13 +51,5 @@ export default class BlockImages {
             case '#E75FAD': return this.magenta;
                 break;
         }
-        // if (str_color === undefined){
-        //     console.log("Something went wrong, color is undefined");
-        // }
-        // return str_color;
     }
 }
-
-// loadImgs();
-
-// export default loadImgs;
