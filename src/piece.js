@@ -1,7 +1,15 @@
 import { Format1, Format2, Format3, Format4, Format5, Format6, Format7} from './format.js';
 
-
+/**
+ * Classe referente a uma peça
+ */
 export class Piece {
+    /**
+     * Constrói a peça
+     * @param {number} formatValue número referente ao formato da peça
+     * @param {BlockImages} blockImages classe contendo as imagens dos blocos
+     * @param {number} x posição no canva
+     */
     constructor(formatValue, blockImages, x=0) {
         this.type = formatValue;
         this.rotation = 0;
@@ -33,16 +41,24 @@ export class Piece {
         }
     }
 
+    /**
+     * Retorna valor do formato da peça
+     * @returns {number} formato da peça
+     */
     getType(){
         return this.type;
     }
 
-// Funções de rotação -----------------------------------------------------------------------
+    // Métodos de rotação -----------------------------------------------------------------------
 
+    /**
+     * Verifica se é possível rotacionar a peça
+     * @param {Array} newFormat posições da peça rotacionada
+     * @param {matrix} matrix representação do jogo
+     * @returns {bool} true se possível rotacionar, false se não
+     */
     RotateIsValid(newFormat, matrix){
-        // Check if it colides with border
-        
-        // console.log("Antes " + typeof(newFormat) + " novo formato array: " + newFormat);
+        // Veerifica se ultrapassa a borda
         for(let k=0; k < newFormat.length; k++){
             let new_x = newFormat[k][0];
             let new_y = newFormat[k][1];
@@ -50,7 +66,7 @@ export class Piece {
         }
 
         let i, j;
-        // Check if it colides with another piece
+        // Verifica se ultrapassa outra peça
         for(let k=0; k < newFormat.length; k++){
             i = newFormat[k][1]/30;
             j = newFormat[k][0]/30;
@@ -60,44 +76,58 @@ export class Piece {
         return true;
     }
 
+    /**
+     * Rotaciona a peça se possível
+     * @param {matrix} matrix representação do jogo
+     */
     rotate(matrix){        
         let newPosition = this.format.rotate(this.rotation);
-        // console.log("Bem Antes " + newPosition);
+
         if(this.RotateIsValid(newPosition, matrix)){
-            // console.log("Validou\n");
             this.updatePosition(newPosition);
             this.rotation = (this.rotation+1)%4;
         }
     }
 
+    /**
+     * Atualiza posição da peça
+     * @param {Array} newPosition posições dos blocos da peça rotacionada
+     */
     updatePosition(newPosition){
         for (let i=0; i < newPosition.length; i++){
-            // Atualiza a posição do bloco.
             this.format.piece[i].x = newPosition[i][0];
             this.format.piece[i].y = newPosition[i][1];
         }
     }
     
-// -------------------------------------------------------------------------------------------
-// Funções de descer as peças ----------------------------------------------------------------
+    /**
+     * Desenha a peça
+     * @param {*} boardContext canva onde será desenhada a peça
+     */
     drawPiece(boardContext){
-
         this.format.piece.forEach(
             i => {
                 i.drawBlock(boardContext);
             }
         )
     }
-
+        
+    // Métodos de movimentar a peça ----------------------------------------------------------------
+    
+    /**
+     * Desce a peça uma linha na matriz
+     * @param {matrix} matrix representação do jogo
+     * @returns {bool} true se foi possível abaixar a peça, false se não
+     */
     downPiece(matrix){
         let flag = true;
         let i, j;
-        //Irá acessar cada bloco da peça, verificando se a movimentação é válida
+
+        // Acessa cada bloco da peça, verificando se a movimentação é válida
         this.format.piece.forEach(
             block => {
-                //Para cada bloco, deverá ver, se a posição seguinte à ocupada
-                //pela peça já não esta ocupada na matriz de posições.
-                // console.log("This is the index line:", block.y/30)
+                // Para cada bloco verifica se a posição seguinte à ocupada
+                // pela peça já não esta ocupada na matriz de posições
                 
                 i = block.y/30;
                 j = block.x/30;
@@ -111,7 +141,8 @@ export class Piece {
 
             }
         )
-        // Se for true, significa que a posição seguinte esta vazia, e a peça pode descer.
+
+        // Se for true, significa que a posição seguinte esta vazia, e a peça pode descer
         if(flag){
             // Movimenta a peça
             this.format.piece.forEach(
@@ -127,7 +158,6 @@ export class Piece {
                 block => {
                     i = block.y/30; 
                     j = block.x/30;
-                    // console.log("i: " + i + " j: " + j);
                     matrix[i][j] = this.type;
                 }
             )
@@ -135,13 +165,19 @@ export class Piece {
         }
     }
 
+    /**
+     * Movimenta a peça na matriz para a esquerda
+     * @param {matrix} matrix representação do jogo
+     * @returns {bool} true se foi possível, false se não
+     */
     leftPiece(matrix){
         let flag = true;
+
         // Verifica se a movimentação é válida
         this.format.piece.forEach(
             block => {
-                //Para cada bloco, deverá ver, se a posição seguinte à ocupada
-                //pela peça já não esta ocupada na matriz de posições.
+                // Para cada bloco verifica se a posição à esquerda da ocupada
+                // pela peça já não esta ocupada na matriz de posições
                 let j = block.x/30;
                 let i = block.y/30;
 
@@ -153,7 +189,7 @@ export class Piece {
                 }
             }
         )
-        //Se for true, significa que a posição seguinte esta vazia, e a peça pode descer.
+        //Se for true, significa que a posição seguinte esta vazia, e a peça pode movimentar
         if(flag){
             // Movimenta a peça para a esquerda
             this.format.piece.forEach(
@@ -163,16 +199,24 @@ export class Piece {
             )
             return true;
         }
-        
+        else {
+            return false;
+        }
     }
 
+    /**
+     * Movimenta a peça na matriz para a direita
+     * @param {matrix} matrix representação do jogo
+     * @returns {bool} true se foi possível, false se não
+     */
     rightPiece(matrix){
         let flag = true;
+
         // Verifica se a movimentação é válida
         this.format.piece.forEach(
             block => {
-                //Para cada bloco, deverá ver, se a posição seguinte à ocupada
-                //pela peça já não esta ocupada na matriz de posições.
+                // Para cada bloco verifica se a posição à direita da ocupada
+                // pela peça já não esta ocupada na matriz de posições.
                 let j = block.x/30;
                 let i = block.y/30;
 
@@ -184,16 +228,19 @@ export class Piece {
                 }
             }
         )
-        // console.log("a flag é" + flag);
-        //Se for true, significa que a posição seguinte esta vazia, e a peça pode descer.
+
+        //Se for true, significa que a posição seguinte esta vazia, e a peça pode movimentar
         if(flag){
-            // Movimenta a peça para a esquerda
+            // Movimenta a peça para a direita
             this.format.piece.forEach(
                 block => {
                     block.right();
                 }
             )
             return true;
+        }
+        else {
+            return false;
         }
         
     }
