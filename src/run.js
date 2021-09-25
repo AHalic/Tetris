@@ -135,6 +135,8 @@ function loop(nextPiece){
 
     setTimeout( function onTick() {
         if (game.over()){
+            game.themeMusic.muted = true;
+            game.endAudio.play();
             restartGame();
             return;
         }
