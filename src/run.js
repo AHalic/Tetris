@@ -10,7 +10,7 @@ let piece, nextPiece;
 let game; 
 
 // Evento de inicio do jogo (só acontece uma vez)
-document.addEventListener("keydown", async function start(event) {
+document.addEventListener("keydown", function start(event) {
     const SPACE_KEY = 32;
     const keyPressed = event.keyCode;
 
@@ -26,16 +26,18 @@ document.addEventListener("keydown", async function start(event) {
         document.removeEventListener("keydown", start);
         
         // Delay de início do jogo 
-        await new Promise(r => setTimeout(r, 1500));
-        runGame();
+        // await new Promise(r => setTimeout(r, 1500));
+        setTimeout( () => {
+            runGame();
+        }, 1500);
     }
 });
 
 
 // Evento de pausar o jogo ao clicar no botão de pause
 document.getElementById('pause_button').addEventListener('click', function () {
-    pause = true
     document.removeEventListener("keydown", keyEvents);
+    pause = true
 })
 
 
@@ -183,6 +185,7 @@ async function buildGame() {
 
     // Delay para carregar as imagens
     await new Promise(r => setTimeout(r, 1000));
+
     let type = game.defineNext();
     piece = new Piece(type, blockImages);
     nextPiece = new Piece(type, blockImages, 60);
@@ -192,7 +195,9 @@ async function buildGame() {
 
 // Função que adiciona os eventos e inicia o jogo
 function runGame(){
-    document.addEventListener("keydown", keyEvents);
+    if (!pause) {
+        document.addEventListener("keydown", keyEvents);
+    }
 
     let type = game.defineNext();
     game.clearNextBoard()
