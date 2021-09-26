@@ -2,14 +2,14 @@
 
 # Missão 1 de Linguagens de Programação
 
-Este trabalho é uma implementação do jogo Tetris, utilizando HTML, css e JavaScript.
+Este trabalho é uma implementação do jogo Tetris, utilizando HTML, CSS e JavaScript.
 
 
 ## Como jogar
 
 ### Comandos
 
-Para acessar o jogo basta entrar neste [link](https://ahalic.github.io/Trab1_LP/). Os comandos estão presentes no botão *options* dentro do jogo, sendo eles:
+Para acessar o jogo basta entrar neste [link](https://ahalic.github.io/Trab1_LP/). Foi usado o GithubPages para fazer o deploy do jogo. Os comandos estão presentes no botão *options* dentro do jogo, sendo eles:
 
 - Para descer a peça, pressionar a tecla de seta para baixo;
 - Para mover a peça para a esquerda, pressionar a tecla de seta para esquerda;
@@ -28,7 +28,7 @@ A pontuação consiste em completar linhas com peças. Completando mais de uma l
  - 3 linhas 60 pontos;
  - 4 linhas 100 pontos.
 
-Os leveis do jogo variam de acordo com a pontuação do jogador, aumentando a velocidade com que a peça abaixa quanto maior a pontuação. Isso é feito seguindo os seguintes valores:
+Os níveis do jogo variam de acordo com a pontuação do jogador, aumentando a velocidade com que a peça abaixa quanto maior a pontuação. Isso é feito seguindo os seguintes valores:
 
 - Level 0 = pontuação menor que 100;
 - Level 1 = pontuação menor que 300;
@@ -51,10 +51,10 @@ Arquivo contendo a classe Block e seus métodos. Cada peça é formada por uma q
 Arquivo contendo as 7 classes Format, e seus métodos, sendo cada uma delas referente a um formato diferente de peça.
 
 ### Piece
-Arquivo contendo a classe Piece e seus métodos. Essa classe representa cada peça usada no jogo.
+Arquivo contendo a classe Piece e seus métodos. Essa classe representa cada peça usada no jogo, e cada uma contém um formato.
 
 ### Game
-Arquivo contendo a classe Game e seus métodos. Nesta classe são guardadas as principais informações do jogo, como pontuação, linhas e level. Além disso é nela que fica guardada a matriz de representação de jogo, sendo essa uma matriz 18x10. 
+Arquivo contendo a classe Game e seus métodos. Nesta classe são guardadas as principais informações do jogo, como pontuação, linhas e level. Além disso, é nela que fica guardada a matriz de representação de jogo, sendo essa uma matriz 18x10. 
 Também é nessa classe que é guardado o método de sort do jogo, para isso foi usado o algoritmo de sort chamado *The 7-bag*.
 
 ### Run
@@ -64,10 +64,10 @@ Também é nessa classe que é guardado o método de sort do jogo, para isso foi
 ## Refs
 - [Algoritmo de sort](https://simon.lc/the-history-of-tetris-randomizers)
 - [JsDoc](https://jsdoc.app/howto-es2015-classes.html)
-- [Fonte utilizada](https://www.dafont.com/pt/press-start-2p.font)
+- [Fonte dos textos](https://www.dafont.com/pt/press-start-2p.font)
 
 
-**Authors**: Sophie Dilhon, Fernando Azevedo & Igor Varejão
+**Autores**: Sophie Dilhon, Fernando Azevedo & Igor Varejão
 
 
 <p align="center">
