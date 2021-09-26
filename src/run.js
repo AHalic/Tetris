@@ -65,11 +65,14 @@ document.getElementById('myOptions').addEventListener('click', function () {
 
 // Função que adiciona o evento de ao clicar space bar recomeça o jogo 
 // (chamada apenas ao terminar o jogo)
-function restartGame() {
+async function restartGame() {
     // Mostra a imagem de game over e deixa fundo opaco
     let image = document.getElementsByClassName("End")[0];
     image.style.display = "block";
     document.getElementById("game").style.opacity = "0.2";
+    
+    await new Promise(r => setTimeout(r, 2200));
+    game.themeMusic.play();
 
 
     document.addEventListener("keydown", async function restart(event) {
@@ -135,7 +138,7 @@ function loop(nextPiece){
 
     setTimeout( function onTick() {
         if (game.over()){
-            game.themeMusic.muted = true;
+            game.themeMusic.pause();
             game.endAudio.play();
             restartGame();
             return;

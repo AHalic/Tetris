@@ -27,12 +27,14 @@ export class Game {
         this.audioLoad();
         let music = this.themeMusic;
         let lineSound = this.lineSound;
+        let endSound = this.endAudio;
         
         // Evento de musica do jogo
         document.getElementById("soundButton").addEventListener("click", function mute() {
             if (sound) {
                 music.muted = true;
                 lineSound.muted = true;
+                endSound.muted = true;
                 document.getElementsByClassName("sound-image")[0].src = "imgs/mute.png";
                 document.getElementsByClassName("sound-image")[0].style = "height: 63px; width: 63px"
             }
@@ -40,6 +42,7 @@ export class Game {
             else {
                 music.muted = false;
                 lineSound.muted = false;
+                endSound.muted = false;
                 document.getElementsByClassName("sound-image")[0].src = "imgs/sound.png";
                 document.getElementsByClassName("sound-image")[0].style = "height: 52px; width: 52px"
             }
@@ -241,7 +244,7 @@ export class Game {
         this.endAudio.load();
         this.themeMusic.loop = true;
         this.lineSound.volume = 0.1;
-        this.endAudio.volume = 0.1;
+        this.endAudio.volume = 0.08;
         this.themeMusic.volume = 0.025;
     }
 
