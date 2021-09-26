@@ -4,8 +4,12 @@
 
 Este trabalho é uma implementação do jogo Tetris, utilizando HTML, CSS e JavaScript.
 
+<p align="center">
+    <img src="audios/tetris3.gif" width="55%" height="auto" />
+</p>
 
 ## Como jogar
+
 
 ### Comandos
 
@@ -41,10 +45,6 @@ Os níveis do jogo variam de acordo com a pontuação do jogador, aumentando a v
 - Level 8 = pontuação maior ou igual a 2000.
 
 
-<p align="center">
-    <img src="audios/tetris3.gif" width="40%" height="auto" />
-</p>
-<!-- ![Teste](audios/tetris3.gif) -->
 
 ## Conteúdo do repositório
 
