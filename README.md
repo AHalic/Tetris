@@ -40,13 +40,6 @@ Os níveis do jogo variam de acordo com a pontuação do jogador, aumentando a v
 - Level 7 = pontuação menor que 2000;
 - Level 8 = pontuação maior ou igual a 2000.
 
-<p align="center">
-    <img src="audios/tetris3.gif"/>
-</p>
-
-<p align="center">
-    <img src="audios/tetris3.gif.mp4"/>
-</p>
 
 ## Conteúdo do repositório
 
