@@ -9,7 +9,7 @@ Este trabalho é uma implementação do jogo Tetris, utilizando HTML, CSS e Java
 
 ### Comandos
 
-Para acessar o jogo basta entrar neste [link](https://ahalic.github.io/Trab1_LP/). Foi usado o GithubPages para fazer o deploy do jogo. Os comandos estão presentes no botão *options* dentro do jogo, sendo eles:
+Para acessar o jogo basta entrar neste [link](https://ahalic.github.io/Tetris/). Foi usado o GithubPages para fazer o deploy do jogo. Os comandos estão presentes no botão *options* dentro do jogo, sendo eles:
 
 - Para descer a peça, pressionar a tecla de seta para baixo;
 - Para mover a peça para a esquerda, pressionar a tecla de seta para esquerda;
@@ -38,7 +38,7 @@ Os níveis do jogo variam de acordo com a pontuação do jogador, aumentando a v
 - Level 5 = pontuação menor que 1400;
 - Level 6 = pontuação menor que 1700;
 - Level 7 = pontuação menor que 2000;
-- Levem 8 = pontuação maior ou igual a 2000.
+- Level 8 = pontuação maior ou igual a 2000.
 
 ## Conteúdo do repositório
 
