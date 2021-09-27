@@ -13,7 +13,7 @@ Este trabalho é uma implementação do jogo Tetris, utilizando HTML, CSS e Java
 
 ### Comandos
 
-Para acessar o jogo basta entrar neste [link](https://ahalic.github.io/Tetris/). Foi usado o GithubPages para fazer o deploy do jogo. Os comandos estão presentes no botão *options* dentro do jogo, sendo eles:
+Para acessar o jogo basta entrar neste [link](https://ahalic.github.io/Tetris/). Foi usado o GithubPages para fazer o deploy do jogo. Foram feitos testes nos navegadores Firefox, Safari, Chrome e Brave, portanto recomenda-se o uso destes para jogá-lo. Os comandos estão presentes no botão *options* dentro do jogo, sendo eles:
 
 - Para descer a peça, pressionar a tecla de seta para baixo;
 - Para mover a peça para a esquerda, pressionar a tecla de seta para esquerda;
